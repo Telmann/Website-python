@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Операторы и Выражения</title>
+    <link rel="shortcut icon" type="image/ico" href="python-logo.png"/>
+
+    <link rel="stylesheet" href="_static/classic.css" type="text/css"/>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
+</head>
+<body style="width: 100vw;overflow-x: hidden;">
+<style> body {background: #ccc;} </style>
+
+<div style="float: left;position: absolute;top: 0px; width: 200px;height: 3750px; padding: 25px;background: #C8A98F;color: #8B4513;margin: 0px;">
+    <p><A href="Главная страница.html" style="color: #8B4513;font-size: 20px;text-decoration: none;" target="_blank">Главная
+        страница</A></p>
+
+    <p><A href="Книга.html" style="color: #8B4513;text-decoration: none;" target="_blank">Теория</A></p>
+
+    <p><A href="Обучающие видео.html" style="color: #8B4513;text-decoration: none;" target="_blank">Обучающие видео</A>
+    </p>
+
+    <p><A href="Exercieses.html" style="color: #8B4513;text-decoration: none;" target="_blank">Практика</A></p>
+</div>
+
+<div class="section" id="id1" style="margin-left: 270px;position: absolute;">
+    <h1>Операторы и выражения<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+    <p>Большинство предложений (логических строк) в программах содержат <em>выражения</em>.
+        Простой пример выражения: <code class="docutils literal"><span class="pre">2</span> <span class="pre">+</span>
+            <span class="pre">3</span></code>. Выражение можно разделить на операторы и
+        операнды.</p>
+    <p><em>Операторы</em> &#8211; это некий функционал, производящий какие-либо действия, который
+        может быть представлен в виде символов, как например <code class="docutils literal"><span
+                class="pre">+</span></code>, или специальных
+        зарезервированных слов. Операторы могут производить некоторые действия над
+        данными, и эти данные называются <em>операндами</em>. В нашем случае <code class="docutils literal"><span
+                class="pre">2</span></code> и <code class="docutils literal"><span class="pre">3</span></code> &#8211;
+        это операнды.</p>
+    <div class="section" id="id2">
+        <h2>Операторы<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Кратко рассмотрим операторы и их применение:</p>
+        <p>Обратите внимание, вычислить значения выражений, данных в примерах, можно также
+            используя интерпретатор интерактивно. Например, для проверки выражения
+            <code class="docutils literal"><span class="pre">2</span> <span class="pre">+</span> <span
+                    class="pre">3</span></code> воспользуйтесь интерактивной командной строкой интерпретатора Python:
+        </p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span
+                    class="mi">2</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span> <span class="o">*</span> <span class="mi">5</span>
+<span class="go">15</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Операторы и их применение</strong></p>
+        <table border="1" class="docutils">
+            <colgroup>
+                <col width="11%"/>
+                <col width="17%"/>
+                <col width="20%"/>
+                <col width="52%"/>
+            </colgroup>
+            <tbody valign="top">
+            <tr class="row-odd">
+                <td>Оператор</td>
+                <td>Название</td>
+                <td>Объяснение</td>
+                <td>Примеры</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">+</span></code></td>
+                <td>Сложение</td>
+                <td>Суммирует два
+                    объекта
+                </td>
+                <td><code class="docutils literal"><span class="pre">3</span> <span class="pre">+</span> <span
+                        class="pre">5</span></code> даст <code class="docutils literal"><span
+                        class="pre">8</span></code>;
+                    <code class="docutils literal"><span class="pre">'a'</span> <span class="pre">+</span> <span
+                            class="pre">'b'</span></code> даст <code class="docutils literal"><span
+                            class="pre">'ab'</span></code></td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">-</span></code></td>
+                <td>Вычитание</td>
+                <td>Даёт разность
+                    двух чисел;
+                    если первый
+                    операнд
+                    отсутствует,
+                    он считается
+                    равным нулю
+                </td>
+                <td><code class="docutils literal"><span class="pre">-5.2</span></code> даст отрицательное число,
+                    а <code class="docutils literal"><span class="pre">50</span> <span class="pre">-</span> <span
+                            class="pre">24</span></code> даст <code class="docutils literal"><span class="pre">26</span></code>.
+                </td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">*</span></code></td>
+                <td>Умножение</td>
+                <td>Даёт
+                    произведение
+                    двух чисел или
+                    возвращает
+                    строку,
+                    повторённую
+                    заданное число
+                    раз.
+                </td>
+                <td><code class="docutils literal"><span class="pre">2</span> <span class="pre">*</span> <span
+                        class="pre">3</span></code> даст <code class="docutils literal"><span
+                        class="pre">6</span></code>.
+                    <code class="docutils literal"><span class="pre">'la'</span> <span class="pre">*</span> <span
+                            class="pre">3</span></code> даст <code class="docutils literal"><span
+                            class="pre">'lalala'</span></code>.
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">**</span></code></td>
+                <td>Возведение
+                    в степень
+                </td>
+                <td>Возвращает
+                    число <code class="docutils literal"><span class="pre">х</span></code>,
+                    возведённое в
+                    степень <code class="docutils literal"><span class="pre">y</span></code></td>
+                <td><code class="docutils literal"><span class="pre">3</span> <span class="pre">**</span> <span
+                        class="pre">4</span></code> даст <code class="docutils literal"><span
+                        class="pre">81</span></code>
+                    (т.е. <code class="docutils literal"><span class="pre">3</span> <span class="pre">*</span> <span
+                            class="pre">3</span> <span class="pre">*</span> <span class="pre">3</span> <span
+                            class="pre">*</span> <span class="pre">3</span></code>)
+                </td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">/</span></code></td>
+                <td>Деление</td>
+                <td>Возвращает
+                    частное от
+                    деления <code class="docutils literal"><span class="pre">x</span></code>
+                    на <code class="docutils literal"><span class="pre">y</span></code></td>
+                <td><code class="docutils literal"><span class="pre">4</span> <span class="pre">/</span> <span
+                        class="pre">3</span></code> даст <code class="docutils literal"><span class="pre">1.3333333333333333</span></code>.
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">//</span></code></td>
+                <td>Целочисленное
+                    деление
+                </td>
+                <td>Возвращает
+                    неполное
+                    частное от
+                    деления
+                </td>
+                <td><code class="docutils literal"><span class="pre">4</span> <span class="pre">//</span> <span
+                        class="pre">3</span></code> даст <code class="docutils literal"><span
+                        class="pre">1</span></code>.
+                    <code class="docutils literal"><span class="pre">-4</span> <span class="pre">//</span> <span
+                            class="pre">3</span></code> даст <code class="docutils literal"><span class="pre">-2</span></code>.
+                </td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">%</span></code></td>
+                <td>Деление по
+                    модулю
+                </td>
+                <td>Возвращает
+                    остаток от
+                    деления
+                </td>
+                <td><code class="docutils literal"><span class="pre">8</span> <span class="pre">%</span> <span
+                        class="pre">3</span></code> даст <code class="docutils literal"><span
+                        class="pre">2</span></code>.
+                    <code class="docutils literal"><span class="pre">-25.5</span> <span class="pre">%</span> <span
+                            class="pre">2.25</span></code> даст <code class="docutils literal"><span
+                            class="pre">1.5</span></code>.
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">&lt;&lt;</span></code></td>
+                <td>Сдвиг влево</td>
+                <td>Сдвигает биты
+                    числа влево на
+                    заданное
+                    количество
+                    позиций. (Любое
+                    число в памяти
+                    компьютера
+                    представлено в
+                    виде битов -
+                    или двоичных
+                    чисел, т.е.
+                    0 и 1)
+                </td>
+                <td><code class="docutils literal"><span class="pre">2</span> <span class="pre">&lt;&lt;</span> <span
+                        class="pre">2</span></code> даст <code class="docutils literal"><span
+                        class="pre">8</span></code>.
+                    В двоичном виде <code class="docutils literal"><span class="pre">2</span></code> представляет
+                    собой <code class="docutils literal"><span class="pre">10</span></code>. Сдвиг влево на 2 бита
+                    даёт <code class="docutils literal"><span class="pre">1000</span></code>, что в десятичном
+                    виде означает <code class="docutils literal"><span class="pre">8</span></code>.
+                </td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">&gt;&gt;</span></code></td>
+                <td>Сдвиг вправо</td>
+                <td>Сдвигает биты
+                    числа вправо на
+                    заданное число
+                    позиций.
+                </td>
+                <td><code class="docutils literal"><span class="pre">11</span> <span class="pre">&gt;&gt;</span> <span
+                        class="pre">1</span></code> даст <code class="docutils literal"><span
+                        class="pre">5</span></code>.
+                    В двоичном виде <code class="docutils literal"><span class="pre">11</span></code> представляется
+                    как <code class="docutils literal"><span class="pre">1011</span></code>, что будучи смещённым на
+                    1 бит вправо, даёт <code class="docutils literal"><span class="pre">101</span></code>, а это, в
+                    свою очередь, не что иное как
+                    десятичное <code class="docutils literal"><span class="pre">5</span></code></td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">&amp;</span></code></td>
+                <td>Побитовое И</td>
+                <td>Побитовая
+                    операция И над
+                    числами
+                </td>
+                <td><code class="docutils literal"><span class="pre">5</span> <span class="pre">&amp;</span> <span
+                        class="pre">3</span></code> даёт <code class="docutils literal"><span
+                        class="pre">1</span></code>.
+                </td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">|</span></code></td>
+                <td>Побитовое ИЛИ</td>
+                <td>Побитовая
+                    операция ИЛИ
+                    над числами
+                </td>
+                <td><code class="docutils literal"><span class="pre">5</span> <span class="pre">|</span> <span
+                        class="pre">3</span></code> даёт <code class="docutils literal"><span
+                        class="pre">7</span></code></td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">^</span></code></td>
+                <td>Побитовое
+                    ИСКЛЮЧИТЕЛЬНО
+                    ИЛИ
+                </td>
+                <td>Побитовая
+                    операция
+                    ИСКЛЮЧИТЕЛЬНО
+                    ИЛИ
+                </td>
+                <td><code class="docutils literal"><span class="pre">5</span> <span class="pre">^</span> <span
+                        class="pre">3</span></code> даёт <code class="docutils literal"><span
+                        class="pre">6</span></code></td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">~</span></code></td>
+                <td>Побитовое НЕ</td>
+                <td>Побитовая
+                    операция НЕ для
+                    числа <code class="docutils literal"><span class="pre">x</span></code>
+                    соответствует
+                    <code class="docutils literal"><span class="pre">-(x+1)</span></code></td>
+                <td><code class="docutils literal"><span class="pre">~5</span></code> даёт <code
+                        class="docutils literal"><span class="pre">-6</span></code>.
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">&lt;</span></code></td>
+                <td>Меньше</td>
+                <td>Определяет,
+                    верно ли, что
+                    <code class="docutils literal"><span class="pre">x</span></code> меньше
+                    <code class="docutils literal"><span class="pre">y</span></code>. Все
+                    операторы
+                    сравнения
+                    возвращают
+                    <code class="docutils literal"><span class="pre">True</span></code> или
+                    <code class="docutils literal"><span class="pre">False</span></code> <a class="footnote-reference"
+                                                                                            href="#id12"
+                                                                                            id="id3">[1]</a>.
+                    Обратите
+                    внимание на
+                    заглавные буквы
+                    в этих словах.
+                </td>
+                <td><p class="first"><code class="docutils literal"><span class="pre">5</span> <span
+                        class="pre">&lt;</span> <span class="pre">3</span></code> даст <code
+                        class="docutils literal"><span class="pre">False</span></code>,</p>
+                    <p>а <code class="docutils literal"><span class="pre">3</span> <span class="pre">&lt;</span> <span
+                            class="pre">5</span></code> даст <code class="docutils literal"><span
+                            class="pre">True</span></code>.</p>
+                    <p class="last">Можно составлять произвольные цепочки
+                        сравнений: <code class="docutils literal"><span class="pre">3</span> <span
+                                class="pre">&lt;</span> <span class="pre">5</span> <span class="pre">&lt;</span> <span
+                                class="pre">7</span></code> даёт <code class="docutils literal"><span
+                                class="pre">True</span></code>.</p>
+                </td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">&gt;</span></code></td>
+                <td>Больше</td>
+                <td>Определяет,
+                    верно ли, что
+                    <code class="docutils literal"><span class="pre">x</span></code> больше
+                    <code class="docutils literal"><span class="pre">y</span></code></td>
+                <td><code class="docutils literal"><span class="pre">5</span> <span class="pre">&gt;</span> <span
+                        class="pre">3</span></code> даёт <code class="docutils literal"><span
+                        class="pre">True</span></code>.
+                    Если оба операнда - числа, то перед
+                    сравнением они оба преобразуются к
+                    одинаковому типу. В противном случае
+                    всегда возвращается <code class="docutils literal"><span class="pre">False</span></code>.
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">&lt;=</span></code></td>
+                <td>Меньше или
+                    равно
+                </td>
+                <td>Определяет,
+                    верно ли, что
+                    <code class="docutils literal"><span class="pre">x</span></code> меньше
+                    или равно <code class="docutils literal"><span class="pre">y</span></code></td>
+                <td><code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span
+                        class="pre">3;</span> <span class="pre">y</span> <span class="pre">=</span> <span
+                        class="pre">6;</span> <span class="pre">x</span> <span class="pre">&lt;=</span> <span
+                        class="pre">y</span></code> даёт
+                    <code class="docutils literal"><span class="pre">True</span></code>.
+                </td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">&gt;=</span></code></td>
+                <td>Больше или
+                    равно
+                </td>
+                <td>Определяет,
+                    верно ли, что
+                    <code class="docutils literal"><span class="pre">x</span></code> больше
+                    или равно <code class="docutils literal"><span class="pre">y</span></code></td>
+                <td><code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span
+                        class="pre">4;</span> <span class="pre">y</span> <span class="pre">=</span> <span
+                        class="pre">3;</span> <span class="pre">x</span> <span class="pre">&gt;=</span> <span
+                        class="pre">3</span></code> даёт
+                    <code class="docutils literal"><span class="pre">True</span></code>.
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">==</span></code></td>
+                <td>Равно</td>
+                <td>Проверяет,
+                    одинаковы ли
+                    объекты
+                </td>
+                <td><code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span
+                        class="pre">2;</span> <span class="pre">y</span> <span class="pre">=</span> <span
+                        class="pre">2;</span> <span class="pre">x</span> <span class="pre">==</span> <span
+                        class="pre">y</span></code> даёт
+                    <code class="docutils literal"><span class="pre">True</span></code>.
+                    <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span
+                            class="pre">'str';</span> <span class="pre">y</span> <span class="pre">=</span> <span
+                            class="pre">'stR';</span> <span class="pre">x</span> <span class="pre">==</span> <span
+                            class="pre">y</span></code> даёт
+                    <code class="docutils literal"><span class="pre">False</span></code>.
+                    <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span
+                            class="pre">'str';</span> <span class="pre">y</span> <span class="pre">=</span> <span
+                            class="pre">'str';</span> <span class="pre">x</span> <span class="pre">==</span> <span
+                            class="pre">y</span></code> даёт
+                    <code class="docutils literal"><span class="pre">True</span></code>.
+                </td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">!=</span></code></td>
+                <td>Не равно</td>
+                <td>Проверяет,
+                    верно ли, что
+                    объекты не
+                    равны
+                </td>
+                <td><code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span
+                        class="pre">2;</span> <span class="pre">y</span> <span class="pre">=</span> <span
+                        class="pre">3;</span> <span class="pre">x</span> <span class="pre">!=</span> <span
+                        class="pre">y</span></code> даёт
+                    <code class="docutils literal"><span class="pre">True</span></code>.
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">not</span></code></td>
+                <td>Логическое НЕ</td>
+                <td>Если <code class="docutils literal"><span class="pre">x</span></code>
+                    равно <code class="docutils literal"><span class="pre">True</span></code>,
+                    оператор вернёт
+                    <code class="docutils literal"><span class="pre">False</span></code>. Если
+                    же <code class="docutils literal"><span class="pre">x</span></code> равно
+                    <code class="docutils literal"><span class="pre">False</span></code>,
+                    получим
+                    <code class="docutils literal"><span class="pre">True</span></code>.
+                </td>
+                <td><code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span
+                        class="pre">True;</span> <span class="pre">not</span> <span class="pre">x</span></code> даёт
+                    <code class="docutils literal"><span class="pre">False</span></code>.
+                </td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">and</span></code></td>
+                <td>Логическое И</td>
+                <td><code class="docutils literal"><span class="pre">x</span> <span class="pre">and</span> <span
+                        class="pre">y</span></code>
+                    даёт <code class="docutils literal"><span class="pre">False</span></code>,
+                    если <code class="docutils literal"><span class="pre">x</span></code>
+                    равно <code class="docutils literal"><span class="pre">False</span></code>
+                    , в противном
+                    случае
+                    возвращает
+                    значение <code class="docutils literal"><span class="pre">y</span></code></td>
+                <td><code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span
+                        class="pre">False;</span> <span class="pre">y</span> <span class="pre">=</span> <span
+                        class="pre">True;</span> <span class="pre">x</span> <span class="pre">and</span> <span
+                        class="pre">y</span></code>
+                    возвращает <code class="docutils literal"><span class="pre">False</span></code>, поскольку x равно
+                    <code class="docutils literal"><span class="pre">False</span></code>. В этом случае Python не
+                    станет проверять значение <code class="docutils literal"><span class="pre">y</span></code>, так
+                    как уже знает, что левая часть
+                    выражения &#8216;and&#8217; равняется <code class="docutils literal"><span class="pre">False</span></code>,
+                    что подразумевает, что и всё выражение
+                    в целом будет равно <code class="docutils literal"><span class="pre">False</span></code>,
+                    независимо от значений всех остальных
+                    операндов. Это называется укороченной
+                    оценкой булевых (логических) выражений.
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">or</span></code></td>
+                <td>Логическое
+                    ИЛИ
+                </td>
+                <td>Если <code class="docutils literal"><span class="pre">x</span></code>
+                    равно <code class="docutils literal"><span class="pre">True</span></code>,
+                    в результате
+                    получим
+                    <code class="docutils literal"><span class="pre">True</span></code>, в
+                    противном
+                    случае получим
+                    значение <code class="docutils literal"><span class="pre">y</span></code></td>
+                <td><code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span
+                        class="pre">True;</span> <span class="pre">y</span> <span class="pre">=</span> <span
+                        class="pre">False;</span> <span class="pre">x</span> <span class="pre">or</span> <span
+                        class="pre">y</span></code> даёт
+                    <code class="docutils literal"><span class="pre">True</span></code>. Здесь также может
+                    производиться укороченная оценка
+                    выражений.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="section" id="id4">
+            <h3>Краткая запись мат. операций и присваивания<a class="headerlink" href="#id4"
+                                                              title="Ссылка на этот заголовок">¶</a></h3>
+            <p>Зачастую результат проведения некой математической операции необходимо
+                присвоить переменной, над которой эта операция производилась. Для этого
+                существуют краткие формы записи выражений:</p>
+            <p>Вы можете записать:</p>
+            <div class="highlight-python">
+                <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span
+                        class="mi">2</span><span class="p">;</span> <span class="n">a</span> <span
+                        class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="mi">3</span>
+</pre>
+                </div>
+            </div>
+            <p>в виде:</p>
+            <div class="highlight-python">
+                <div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span
+                        class="mi">2</span><span class="p">;</span> <span class="n">a</span> <span
+                        class="o">*=</span> <span class="mi">3</span>
+</pre>
+                </div>
+            </div>
+            <p>Обратите внимание, что выражения вида &#8220;<code class="docutils literal"><span
+                    class="pre">переменная</span> <span class="pre">=</span> <span class="pre">переменная</span> <span
+                    class="pre">операция</span>
+                <span class="pre">выражение</span></code>&#8221; принимает вид &#8220;<code
+                    class="docutils literal"><span class="pre">переменная</span> <span class="pre">операция</span> <span
+                    class="pre">=</span> <span class="pre">выражение</span></code>&#8221;.</p>
+        </div>
+    </div>
+    <div class="section" id="id5">
+        <h2>Порядок вычисления<a class="headerlink" href="#id5" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Если имеется выражение вида <code class="docutils literal"><span class="pre">2</span> <span
+                class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span
+                class="pre">4</span></code>, что производится раньше: сложение
+            или умножение? Школьный курс математики говорит нам, что умножение должно
+            производиться в первую очередь. Это означает, что оператор умножения имеет
+            более высокий приоритет, чем оператор сложения.</p>
+        <p>Следующая таблица показывает приоритет операторов в Python, начиная с самого
+            низкого (самое слабое связывание) и до самого высокого (самое сильное
+            связывание). Это означает, что в любом выражении Python сперва вычисляет
+            операторы и выражения, расположенные внизу таблицы, а затем операторы выше по
+            таблице.</p>
+        <p>Эта таблица взята из <a class="reference external"
+                                   href="http://docs.python.org/py3k/reference/expressions.html#summary">Справочника по
+            языку Python (англ.)</a>
+            и приводится здесь для полноты описания. На практике лучше использовать скобки
+            для группировки операторов и операндов, чтобы в явном виде указать порядок
+            вычисления выражений. Заодно это облегчит чтение программы. Более подробно см.
+            в разделе <a class="reference internal" href="#changing-the-order-of-evaluation"><span class="std std-ref">Изменение порядка вычисления</span></a>
+            ниже.</p>
+        <p><strong>Приоритет операторов</strong></p>
+        <table border="1" class="docutils">
+            <colgroup>
+                <col width="41%"/>
+                <col width="59%"/>
+            </colgroup>
+            <tbody valign="top">
+            <tr class="row-odd">
+                <td>Оператор</td>
+                <td>Описание</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">lambda</span></code></td>
+                <td>лямбда-выражение</td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">or</span></code></td>
+                <td>Логическое &#8220;ИЛИ&#8221;</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">and</span></code></td>
+                <td>Логическое &#8220;И&#8221;</td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">not</span> <span class="pre">x</span></code></td>
+                <td>Логическое &#8220;НЕ&#8221;</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">in</span></code>, <code
+                        class="docutils literal"><span class="pre">not</span> <span class="pre">in</span></code></td>
+                <td>Проверка принадлежности</td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">is</span></code>, <code
+                        class="docutils literal"><span class="pre">is</span> <span class="pre">not</span></code></td>
+                <td>Проверка тождественности</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">&lt;</span></code>, <code class="docutils literal"><span
+                        class="pre">&lt;=</span></code>, <code class="docutils literal"><span
+                        class="pre">&gt;</span></code>,
+                    <code class="docutils literal"><span class="pre">&gt;=</span></code>, <code
+                            class="docutils literal"><span class="pre">!=</span></code>, <code class="docutils literal"><span
+                            class="pre">==</span></code></td>
+                <td>Сравнения</td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">|</span></code></td>
+                <td>Побитовое &#8220;ИЛИ&#8221;</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">^</span></code></td>
+                <td>Побитовое &#8220;ИСКЛЮЧИТЕЛЬНО ИЛИ&#8221;</td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">&amp;</span></code></td>
+                <td>Побитовое &#8220;И&#8221;</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">&lt;&lt;</span></code>, <code
+                        class="docutils literal"><span class="pre">&gt;&gt;</span></code></td>
+                <td>Сдвиги</td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">+</span></code>, <code
+                        class="docutils literal"><span class="pre">-</span></code></td>
+                <td>Сложение и вычитание</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">*</span></code>, <code
+                        class="docutils literal"><span class="pre">/</span></code>,
+                    <code class="docutils literal"><span class="pre">//</span></code>, <code
+                            class="docutils literal"><span class="pre">%</span></code></td>
+                <td>Умножение, деление, целочисленное
+                    деление и остаток от деления
+                </td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">+x</span></code>, <code
+                        class="docutils literal"><span class="pre">-x</span></code></td>
+                <td>Положительное, отрицательное</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">~x</span></code></td>
+                <td>Побитовое НЕ</td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">**</span></code></td>
+                <td>Возведение в степень</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">x.attribute</span></code></td>
+                <td>Ссылка на атрибут</td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">x[индекс]</span></code></td>
+                <td>Обращение по индексу</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">x[индекс1:индекс2]</span></code></td>
+                <td>Вырезка</td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">f(аргументы</span> <span
+                        class="pre">...)</span></code></td>
+                <td>Вызов функции</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">(выражения,</span> <span
+                        class="pre">...)</span></code></td>
+                <td>Связка или кортеж <a class="footnote-reference" href="#id13" id="id6">[2]</a></td>
+            </tr>
+            <tr class="row-odd">
+                <td><code class="docutils literal"><span class="pre">[выражения,</span> <span
+                        class="pre">...]</span></code></td>
+                <td>Список</td>
+            </tr>
+            <tr class="row-even">
+                <td><code class="docutils literal"><span class="pre">{ключ:данные,</span> <span class="pre">...}</span></code>
+                </td>
+                <td>Словарь</td>
+            </tr>
+            </tbody>
+        </table>
+        <p>Операторы, о которых мы не упомянули, будут объяснены в дальнейших главах.</p>
+        <p>В этой таблице операторы с <em>равным приоритетом</em> расположены в одной строке.
+            Например, <code class="docutils literal"><span class="pre">+</span></code> и <code class="docutils literal"><span
+                    class="pre">-</span></code> имеют равный приоритет.</p>
+    </div>
+    <div class="section" id="changing-the-order-of-evaluation">
+        <span id="id7"></span>
+        <h2>Изменение порядка вычисления<a class="headerlink" href="#changing-the-order-of-evaluation"
+                                           title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Для облегчения чтения выражений можно использовать скобки. Например,
+            <code class="docutils literal"><span class="pre">2</span> <span class="pre">+</span> <span
+                    class="pre">(3</span> <span class="pre">*</span> <span class="pre">4)</span></code> определённо
+            легче понять, чем <code class="docutils literal"><span class="pre">2</span> <span class="pre">+</span> <span
+                    class="pre">3</span> <span class="pre">*</span> <span class="pre">4</span></code>, которое требует
+            знания приоритета операторов. Как и всё остальное, скобки нужно использовать
+            разумно (не перестарайтесь) и избегать излишних, как в <code class="docutils literal"><span
+                    class="pre">(2</span> <span class="pre">+</span> <span class="pre">(3</span> <span
+                    class="pre">*</span> <span class="pre">4))</span></code>.</p>
+        <p>Есть ещё одно преимущество в использовании скобок &#8211; они дают возможность
+            изменить порядок вычисления выражений. Например, если сложение необходимо
+            произвести прежде умножения, можно записать нечто вроде <code class="docutils literal"><span
+                    class="pre">(2</span> <span class="pre">+</span> <span class="pre">3)</span> <span
+                    class="pre">*</span> <span class="pre">4</span></code>.</p>
+    </div>
+    <div class="section" id="id8">
+        <h2>Ассоциативность<a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Операторы обычно обрабатываются слева направо. Это означает, что операторы с
+            равным приоритетом будут обработаны по порядку от левого до правого. Например,
+            <code class="docutils literal"><span class="pre">2</span> <span class="pre">+</span> <span
+                    class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code> обрабатывается как
+            <code class="docutils literal"><span class="pre">(2</span> <span class="pre">+</span> <span
+                    class="pre">3)</span> <span class="pre">+</span> <span class="pre">4</span></code>.</p>
+    </div>
+    <div class="section" id="id9">
+        <h2>Выражения<a class="headerlink" href="#id9" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Пример (сохраните как <code class="docutils literal"><span class="pre">expression.py</span></code>):</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">length</span> <span class="o">=</span> <span
+                    class="mi">5</span>
+<span class="n">breadth</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="n">area</span> <span class="o">=</span> <span class="n">length</span> <span class="o">*</span> <span
+                        class="n">breadth</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Площадь равна&#39;</span><span
+                        class="p">,</span> <span class="n">area</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Периметр равен&#39;</span><span
+                        class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span
+                        class="p">(</span><span class="n">length</span> <span class="o">+</span> <span
+                        class="n">breadth</span><span class="p">))</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python expression.py
+Площадь равна 10
+Периметр равен 14
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>Длина и ширина прямоугольника хранятся в переменных <code class="docutils literal"><span
+                    class="pre">length</span></code> и <code class="docutils literal"><span
+                    class="pre">breadth</span></code>
+                соответственно. Мы используем их для вычисления периметра и площади
+                прямоугольника при помощи выражений. Результат выражения <code class="docutils literal"><span
+                        class="pre">length</span> <span class="pre">*</span> <span class="pre">breadth</span></code>
+                сохраняется в переменной <code class="docutils literal"><span class="pre">area</span></code>, после чего
+                выводится на экран функцией
+                <code class="docutils literal"><span class="pre">print</span></code>. Во втором случае мы напрямую
+                подставляем значение выражения
+                <code class="docutils literal"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">(length</span>
+                    <span class="pre">+</span> <span class="pre">breadth)</span></code> в функцию <code
+                        class="docutils literal"><span class="pre">print</span></code>.</p>
+                <p>Также обратите внимание, как Python &#8220;красиво печатает&#8221; результат. Несмотря на
+                    то, что мы не указали пробела между <code class="docutils literal"><span class="pre">'Площадь</span>
+                        <span class="pre">равна'</span></code> и переменной <code class="docutils literal"><span
+                            class="pre">area</span></code>,
+                    Python подставляет его за нас, чтобы получить красивый и понятный вывод.
+                    Программа же остаётся при этом легкочитаемой (поскольку нам не нужно
+                    заботиться о пробелах между строками, которые мы выводим). Это пример того,
+                    как Python облегчает жизнь программисту.</p>
+            </div>
+        </blockquote>
+    </div>
+    <div class="section" id="id10">
+        <h2>Резюме<a class="headerlink" href="#id10" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Мы увидели, как пользоваться операторами, операндами и выражениями. Это
+            основные строительные блоки любой программы. Далее мы увидим, как это применить
+            на практике.</p>
+    </div>
+    <div class="section" id="id11">
+        <h2>Примечания<a class="headerlink" href="#id11" title="Ссылка на этот заголовок">¶</a></h2>
+        <table class="docutils footnote" frame="void" id="id12" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id3">[1]</a></td>
+                <td>&#8220;True&#8221; - <em>англ.</em> &#8220;Верно (Правда)&#8221;; &#8220;False&#8221; -
+                    <em>англ.</em> &#8220;Ошибочно (Ложь)&#8221;.
+                    (<em>прим. перев.</em>)
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id13" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id6">[2]</a></td>
+                <td>&#8220;tuple&#8221; - <em>англ.</em> &#8220;кортеж&#8221; (<em>прим. перев.</em>)</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

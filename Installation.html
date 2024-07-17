@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Установка</title>
+    <link rel="shortcut icon" type="image/ico" href="python-logo.png"/>
+
+    <link rel="stylesheet" href="_static/classic.css" type="text/css"/>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
+</head>
+
+
+<body>
+<style> body {background: #ccc;} </style>
+
+<div style="float: left;position: absolute;top: 0px; width: 200px;height: 2080px; padding: 25px;background: #C8A98F;color: #8B4513;margin: 0px;">
+    <p><A href="Главная страница.html" style="color: #8B4513;font-size: 20px;text-decoration: none;" target="_blank">Главная
+        страница</A></p>
+
+    <p><A href="Книга.html" style="color: #8B4513;text-decoration: none;" target="_blank">Теория</A></p>
+
+    <p><A href="Обучающие видео.html" style="color: #8B4513;text-decoration: none;" target="_blank">Обучающие видео</A>
+    </p>
+
+    <p><A href="Exercieses.html" style="color: #8B4513;text-decoration: none;" target="_blank">Практика</A></p>
+</div>
+
+
+<div class="section" id="installation" style="margin-left:270px;">
+    <span id="id1"></span>
+    <h1>Установка<a class="headerlink" href="#installation" title="Ссылка на этот заголовок">¶</a></h1>
+    <p style="margin-left:25px;">Если у вас уже установлен Python 2.x, нет необходимости его удалять для того,
+        чтобы установить Python 3.0. Обе версии могут быть установлены в системе
+        одновременно.</p>
+    <div class="section" id="gnu-linux-bsd">
+        <h2>Установка в GNU/Linux и BSD<a class="headerlink" href="#gnu-linux-bsd"
+                                          title="Ссылка на этот заголовок">¶</a></h2>
+        <p style="margin-left:25px;">Если вы используете один из дистрибутивов GNU/Linux, таких как Ubuntu, Fedora,
+            OpenSUSE, Debian, CentOS или {ваш вариант}, или один из вариантов BSD, как
+            например, FreeBSD, то скорее всего, в вашей системе уже установлен Python.</p>
+        <p style="margin-left:25px;">Чтобы проверить, установлен ли Python на вашей машине с BSD или GNU/Linux,
+            откройте эмулятор терминала (например, <code class="docutils literal"><span
+                    class="pre">konsole</span></code> или <code class="docutils literal"><span class="pre">gnome-terminal</span></code>)
+            и
+            введите команду <code class="docutils literal"><span class="pre">python</span> <span
+                    class="pre">-V</span></code>, как показано ниже.</p>
+        <div class="highlight-default">
+            <div class="highlight">
+    <pre><span></span>$ python -V
+Python 3.3.0</pre>
+            </div>
+        </div>
+        <div class="admonition note">
+            <p class="first admonition-title">Примечание</p>
+            <p class="last"><code class="docutils literal"><span class="pre">$</span></code> &#8211; это приглашение
+                командной строки. Оно может выглядеть по-разному
+                в зависимости от настроек вашей ОС, поэтому я буду обозначать приглашение
+                просто одним символом <code class="docutils literal"><span class="pre">$</span></code>.</p>
+        </div>
+        <p style="margin-left:25px;">Если вы видите информацию о версии, как показано выше, значит Python у вас уже
+            установлен.</p>
+        <p style="margin-left:25px;">Если же вы получаете такое сообщение:</p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python -V
+bash: Python: command not found
+</pre>
+            </div>
+        </div>
+        <p style="margin-left:25px;">значит, Python у вас не установлен. Это маловероятно, но всё же возможно.</p>
+        <div class="admonition note">
+            <p style="margin-left:25px;" class="first admonition-title">Примечание</p>
+            <p style="margin-left:25px;" class="last">Если у вас уже установлен Python 3.x, попробуйте <cite>python3
+                -V</cite>.</p>
+        </div>
+        <p style="margin-left:25px;">В этом случае у вас будут два варианта установки Python:</p>
+        <ul class="simple">
+            <li>Скомпилировать Python из <a class="reference external"
+                                            href="http://www.python.org/download/releases/3.1.1/">исходных текстов</a> и
+                установить его.
+                Инструкция по компиляции есть на указанном веб-сайте.
+            </li>
+            <li>Установить бинарные пакеты, используя пакетный менеджер, входящий в комплект
+                поставки вашей ОС, как например, <code class="docutils literal"><span class="pre">apt-get</span></code>
+                в Ubuntu/Debian и других
+                дистрибутивах, основанных на Debian, <code class="docutils literal"><span class="pre">yum</span></code>
+                в Fedora, <code class="docutils literal"><span class="pre">pkg_add</span></code> во FreeBSD,
+                и т.д. Обратите внимание, что для этого потребуется соединение с Интернетом.
+                В противном случае вы можете любым другим способом скопировать бинарники на
+                свой компьютер и установить оттуда.
+            </li>
+        </ul>
+    </div>
+    <div class="section" id="windows">
+        <h2>Установка в Windows<a class="headerlink" href="#windows" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Посетите страницу <a class="reference external" href="http://www.python.org/download/">http://www.python.org/download/</a>
+            и загрузите последнюю версию.
+            Установка производится так же, как и для любых других программ для Windows.</p>
+        <blockquote>
+            <div>
+                <div class="admonition caution">
+                    <p class="first admonition-title">Осторожно</p>
+                    <p class="last">Когда вам будет предложено отключить некоторые &#8220;опциональные&#8221;
+                        компоненты,
+                        не отключайте ни одного! Некоторые из этих компонентов могут вам
+                        пригодиться, особенно IDLE.</p>
+                </div>
+            </div>
+        </blockquote>
+        <p>Интересно, что большую часть загрузок производят именно пользователи Windows.
+            Конечно, это не даёт представления о полной картине, поскольку у большинства
+            пользователей GNU/Linux Python установлен в системе по умолчанию.</p>
+        <div class="section" id="dos">
+            <span id="installation-dos-prompt"></span>
+            <h3>Командная строка DOS<a class="headerlink" href="#dos" title="Ссылка на этот заголовок">¶</a></h3>
+            <p>Для использования Python из командной строки Windows, т.е. приглашения DOS,
+                необходимо установить должным образом переменную PATH.</p>
+            <p>Для Windows 2000, XP, 2003 , перейдите в &#8220;Панель управления&#8221; &#8211;&gt; &#8220;Система&#8221;
+                &#8211;&gt; &#8220;Дополнительно&#8221; &#8211;&gt; &#8220;Переменные среды&#8221;. Нажмите на
+                переменной с именем
+                <code class="docutils literal"><span class="pre">PATH</span></code> в отделе &#8220;Системные переменные&#8221;,
+                после этого выберите
+                &#8220;Редактировать&#8221; и допишите <code class="docutils literal"><span
+                        class="pre">;C:\Python33</span></code> к концу того, что там уже есть
+                (проверьте, существует ли такой каталог, так как для более новых версий Python
+                он будет иметь другое имя). Конечно, укажите действительное имя каталога.</p>
+            <p>Для более старых версий Windows добавьте следующую строку в файл
+                <code class="docutils literal"><span class="pre">C:\AUTOEXEC.BAT</span></code> : &#8216;<code
+                        class="docutils literal"><span class="pre">PATH=%PATH%;C:\Python33</span></code>&#8216; (без
+                кавычек) и
+                перезапустите систему. Для Windows NT используйте файл <code class="docutils literal"><span class="pre">AUTOEXEC.NT</span></code>.
+            </p>
+            <p>Для Windows Vista:</p>
+            <ol class="arabic simple">
+                <li>Нажмите кнопку &#8220;Пуск&#8221; и выберите &#8220;Панель управления&#8221;.</li>
+                <li>Нажмите &#8220;Система&#8221;, справа вы увидите &#8220;Просмотр основных сведений о вашем
+                    компьютере&#8221;. Слева &#8211; список действий, последним из которых будет
+                    &#8220;Дополнительные параметры системы.&#8221; Нажмите её. Отобразится вкладка
+                    &#8220;Дополнительно&#8221; диалога параметров системы. Нажмите кнопку &#8220;Переменные
+                    среды&#8221; справа внизу.
+                </li>
+                <li>В нижнем поле под названием &#8220;Системные переменные&#8221; прокрутите до <code
+                        class="docutils literal"><span class="pre">Path</span></code> и
+                    нажмите кнопку &#8220;Редактировать&#8221;.
+                </li>
+                <li>Измените путь, как нужно.</li>
+                <li>Перезапустите систему. Vista не обновляет системные пути до перезагрузки.</li>
+            </ol>
+            <p>Для Windows 7:</p>
+            <ol class="arabic simple">
+                <li>Щёлкните правой кнопкой мыши на значке &#8220;Компьютер&#8221; на рабочем столе и
+                    выберите &#8220;Свойства&#8221;; иначе &#8211; нажмите кнопку &#8220;Пуск&#8221; и выберите &#8220;Панель
+                    Управления&#8221; &#8211;&gt; &#8220;Система и безопасность&#8221; &#8211;&gt; &#8220;Система&#8221;.
+                    Нажмите
+                    &#8220;Дополнительные параметры системы&#8221; слева, а затем выберите вкладку
+                    &#8220;Дополнительно&#8221;. Внизу нажмите кнопку &#8220;Переменные среды&#8221; и в отделе
+                    &#8220;Системные переменные&#8221; найдите переменную <code class="docutils literal"><span
+                            class="pre">PATH</span></code>, выберите её и нажмите
+                    &#8220;Редактировать&#8221;.
+                </li>
+                <li>Перейдите к концу строки в поле &#8220;Значение переменной&#8221; и допишите
+                    <code class="docutils literal"><span class="pre">;C:\Python33</span></code>.
+                </li>
+                <li>Если значение переменной было <code class="docutils literal"><span class="pre">%SystemRoot%\system32;</span></code>,
+                    теперь оно примет
+                    вид <code class="docutils literal"><span class="pre">%SystemRoot%\system32;C:\Python33</span></code>
+                </li>
+                <li>Нажмите &#8220;Ok&#8221;, и всё. Перезагрузка не требуется.</li>
+            </ol>
+        </div>
+        <div class="section" id="python-windows">
+            <h3>Запуск командной строки Python в Windows<a class="headerlink" href="#python-windows"
+                                                           title="Ссылка на этот заголовок">¶</a></h3>
+            <p>Если вы должным образом <a class="reference internal" href="#installation-dos-prompt"><span
+                    class="std std-ref">установили значение переменной PATH</span></a>,
+                теперь можно запускать интерпретатор из командной строки.</p>
+            <p>Чтобы открыть терминал в Windows, нажмите кнопку &#8220;Пуск&#8221; и выберите &#8220;Выполнить&#8221;.
+                В появившемся диалоговом окне наберите <code class="docutils literal"><span
+                        class="pre">cmd</span></code> и нажмите <code class="docutils literal"><span
+                        class="pre">Enter</span></code>.</p>
+            <p>Затем наберите <code class="docutils literal"><span class="pre">python</span></code> и проверьте, нет ли
+                ошибок.</p>
+        </div>
+    </div>
+    <div class="section" id="mac-os-x">
+        <h2>Для пользователей Mac OS X<a class="headerlink" href="#mac-os-x" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>У пользователей Mac OS X Python уже будет установлен в системе. В противном
+            случае вы можете открыть терминал, нажав <code class="docutils literal"><span
+                    class="pre">Command+Пробел</span></code>, набрав в
+            открывшейся строке поиска <code class="docutils literal"><span class="pre">Terminal</span></code> и нажав
+            <code class="docutils literal"><span class="pre">Enter</span></code>.</p>
+        <p>Затем установить <a class="reference external" href="http://mxcl.github.com/homebrew/">Homebrew</a>,
+            выполнив:</p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span><span class="n">ruby</span> <span class="o">-</span><span
+                    class="n">e</span> <span class="s2">"$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"</span>
+</pre>
+            </div>
+        </div>
+        <p>После чего установить Python 3 при помощи:</p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span
+                    class="n">python3</span>
+</pre>
+            </div>
+        </div>
+        <p>А теперь запустите <code class="docutils literal"><span class="pre">python3</span> <span
+                class="pre">-V</span></code> и проверьте, нет ли ошибок.</p>
+    </div>
+    <div class="section" id="id3">
+        <h2>Резюме<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>У пользователей систем GNU/Linux и BSD, вероятнее всего, Python уже установлен.
+            В противном случае его можно установить, используя пакетный менеджер,
+            поставляемый с вашим дистрибутивом. Для Windows установка Python сводится к
+            загрузке установщика и двойному щелчку на нём. С этого момента мы будем считать,
+            что Python 3 в вашей системе установлен.</p>
+        <p>Далее мы приступим к написанию нашей первой программы на Python.</p>
+    </div>
+</div>
+
+
+</body>
+</html>

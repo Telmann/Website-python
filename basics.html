@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Основы</title>
+    <link rel="shortcut icon" type="image/ico" href="python-logo.png"/>
+
+    <link rel="stylesheet" href="_static/classic.css" type="text/css"/>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
+</head>
+<body>
+<style> body {background: #ccc;} </style>
+
+<div style="float: left;position: absolute;top: 0px; width: 200px;height: 6220px; padding: 25px;background: #C8A98F;color: #8B4513;margin: 0px;">
+    <p><A href="Главная страница.html" style="color: #8B4513;font-size: 20px;text-decoration: none;" target="_blank">Главная
+        страница</A></p>
+
+    <p><A href="Книга.html" style="color: #8B4513;text-decoration: none;" target="_blank">Теория</A></p>
+
+    <p><A href="Обучающие видео.html" style="color: #8B4513;text-decoration: none;" target="_blank">Обучающие видео</A>
+    </p>
+
+    <p><A href="Exercieses.html" style="color: #8B4513;text-decoration: none;" target="_blank">Практика</A></p>
+</div>
+
+<div class="section" id="id1" style="margin-left: 270px;">
+    <h1>Основы<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+    <p>Просто напечатать &#8220;Привет, Мир!&#8221; недостаточно, верно? Вы хотите сделать больше
+        &#8211; вы хотите ввести что-то в программу, обработать и получить нечто на выходе.
+        В Python это можно организовать при помощи констант и переменных, а также
+        некоторыми другими способами, которые будут рассмотрены в этой главе.</p>
+    <div class="section" id="id2">
+        <h2>Комментарии<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+        <p><em>Комментарии</em> &#8211; это то, что пишется после символа <code class="docutils literal"><span
+                class="pre">#</span></code>, и представляет интерес
+            лишь как заметка для читающего программу.</p>
+        <p>Например:</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span
+                    class="s1">&#39;Привет, Мир!&#39;</span><span class="p">)</span> <span class="c1"># print -- это функция</span>
+</pre>
+            </div>
+        </div>
+        <p>или:</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># print -- это функция</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Привет, Мир!&#39;</span><span
+                        class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p>Старайтесь в своих программах писать как можно больше полезных комментариев,
+            объясняющих:</p>
+        <ul class="simple">
+            <li>предположения;</li>
+            <li>важные решения;</li>
+            <li>важные детали;</li>
+            <li>проблемы, которые вы пытаетесь решить;</li>
+            <li>проблемы, которых вы пытаетесь избежать и т.д.</li>
+        </ul>
+        <p><a class="reference external"
+              href="http://www.codinghorror.com/blog/2006/12/code-tells-you-how-comments-tell-you-why.html">Текст
+            программы говорит о том, КАК, а комментарии должны объяснять, ПОЧЕМУ</a>.</p>
+        <p>Это будет полезно для тех, кто будет читать вашу программу, так как им легче
+            будет понять, что программа делает. Помните, что таким человеком можете
+            оказаться вы сами через полгода!</p>
+    </div>
+    <div class="section" id="id4">
+        <h2>Литеральные константы<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Примером литеральной константы может быть число, например, <code class="docutils literal"><span
+                class="pre">5</span></code>, <code class="docutils literal"><span class="pre">1.23</span></code>,
+            <code class="docutils literal"><span class="pre">9.25e-3</span></code> или что-нибудь вроде <code
+                    class="docutils literal"><span class="pre">'Это</span> <span class="pre">строка'</span></code> или
+            <code class="docutils literal"><span class="pre">&quot;It's</span> <span class="pre">a</span> <span
+                    class="pre">string!&quot;</span></code>. Они
+            называются литеральными, потому что они &#8220;буквальны&#8221;<a class="footnote-reference" href="#id23"
+                                                                              id="id5">[1]</a> &#8211; вы используете их
+            значение буквально. Число <code class="docutils literal"><span class="pre">2</span></code> всегда
+            представляет само себя и ничего другого
+            &#8211; это &#8220;константа&#8221;, потому что её значение нельзя изменить. Поэтому всё это
+            называется литеральными константами.</p>
+    </div>
+    <div class="section" id="id6">
+        <h2>Числа<a class="headerlink" href="#id6" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Числа в Python бывают трёх типов: целые, с плавающей точкой и комплексные.</p>
+        <ul class="simple">
+            <li>Примером целого числа может служить <code class="docutils literal"><span class="pre">2</span></code>.
+            </li>
+            <li>Примерами чисел с плавающей точкой (или &#8220;плавающих&#8221; для краткости) могут быть
+                <code class="docutils literal"><span class="pre">3.23</span></code> и <code
+                        class="docutils literal"><span class="pre">52.3E-4</span></code>. Обозначение <code
+                        class="docutils literal"><span class="pre">E</span></code> показывает степени числа 10. В
+                данном случае <code class="docutils literal"><span class="pre">52.3E-4</span></code> означает 52.3 *
+                10<sup>-4</sup>.
+            </li>
+            <li>Примеры комплексных чисел: <code class="docutils literal"><span class="pre">(-5+4j)</span></code> и
+                <code class="docutils literal"><span class="pre">(2.3</span> <span class="pre">-</span> <span
+                        class="pre">4.6j)</span></code></li>
+        </ul>
+        <div class="admonition- admonition">
+            <p class="first admonition-title">Замечание для опытных программистов</p>
+            <p class="last">Нет отдельного типа &#8216;long int&#8217; (длинное целое). Целые числа по умолчанию
+                могут быть произвольной длины.</p>
+        </div>
+    </div>
+    <div class="section" id="id7">
+        <h2>Строки<a class="headerlink" href="#id7" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Строка &#8211; это <em>последовательность</em> <em>символов</em>. Чаще всего строки &#8211; это просто
+            некоторые наборы слов.</p>
+        <p>Слова могут быть как на английском языке, так и на любом другом, поддерживаемом
+            стандартом Unicode, что означает <a class="reference external"
+                                                href="http://www.unicode.org/cldr/data/charts/supplemental/languages_and_scripts.html">почти
+                на любом языке мира</a>.</p>
+        <div class="admonition- admonition">
+            <p class="first admonition-title">Замечание для опытных программистов</p>
+            <p class="last">В Python 3 нет ASCII-строк, потому что Unicode является надмножеством
+                (включает в себя) ASCII. Если необходимо получить строку строго в кодировке
+                ASCII, используйте <code class="docutils literal"><span class="pre">str.encode(&quot;ascii&quot;)</span></code>.
+                Подробнее смотрите в
+                <a class="reference external"
+                   href="http://stackoverflow.com/questions/175240/how-do-i-convert-a-files-format-from-unicode-to-ascii-using-python#175270">обсуждении
+                    этого вопроса на StackOverflow</a>.
+                По умолчанию все строки в Unicode.</p>
+        </div>
+        <p>Я могу с уверенностью сказать, что вы будете использовать строки почти в каждой
+            вашей программе на Python. Поэтому уделите внимание тому, как работать со
+            строками в Python.</p>
+        <div class="section" id="id9">
+            <h3>Одинарные кавычки<a class="headerlink" href="#id9" title="Ссылка на этот заголовок">¶</a></h3>
+            <p>Строку можно указать, используя одинарные кавычки, как например, <code class="docutils literal"><span
+                    class="pre">'Фраза</span>
+                <span class="pre">в</span> <span class="pre">кавычках'</span></code>. Все пробелы и знаки табуляции
+                сохранятся, как есть.</p>
+        </div>
+        <div class="section" id="id10">
+            <h3>Двойные кавычки<a class="headerlink" href="#id10" title="Ссылка на этот заголовок">¶</a></h3>
+            <p>Строки в двойных кавычках работают точно так же, как и в одинарных. Например,
+                <code class="docutils literal"><span class="pre">&quot;What's</span> <span class="pre">your</span> <span
+                        class="pre">name?&quot;</span></code>.</p>
+        </div>
+        <div class="section" id="triple-quotes">
+            <span id="id11"></span>
+            <h3>Тройные кавычки<a class="headerlink" href="#triple-quotes" title="Ссылка на этот заголовок">¶</a></h3>
+            <p>Можно указывать &#8220;многострочные&#8221; строки с использованием тройных кавычек
+                (<code class="docutils literal"><span class="pre">&quot;&quot;&quot;</span></code> или <code
+                        class="docutils literal"><span class="pre">'''</span></code>). В пределах тройных кавычек можно
+                свободно использовать
+                одинарные и двойные кавычки. Например:</p>
+            <div class="highlight-python">
+                <div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;Это многострочная строка. Это её первая строка.</span>
+<span class="sd">Это её вторая строка.</span>
+<span class="sd">&quot;What&#39;s your name?&quot;, - спросил я.</span>
+<span class="sd">Он ответил: &quot;Bond, James Bond.&quot;</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="id12">
+            <h3>Строки неизменяемы<a class="headerlink" href="#id12" title="Ссылка на этот заголовок">¶</a></h3>
+            <p>Это означает, что после создания строки её больше нельзя изменять. На первый
+                взгляд это может показаться недостатком, но на самом деле это не так.
+                Впоследствии на примере разных программ мы увидим, почему это не является
+                ограничением.</p>
+        </div>
+        <div class="section" id="id13">
+            <h3>Объединение строковых констант<a class="headerlink" href="#id13" title="Ссылка на этот заголовок">¶</a>
+            </h3>
+            <p>Если расположить рядом две строковых константы, Python автоматически их
+                объединит. Например, <code class="docutils literal"><span class="pre">'What\'s</span> <span class="pre">'</span>
+                    <span class="pre">'your</span> <span class="pre">name?'</span></code> автоматически преобразуется в
+                <code class="docutils literal"><span class="pre">&quot;What's</span> <span class="pre">your</span> <span
+                        class="pre">name?&quot;</span></code>.</p>
+            <div class="admonition-c-c admonition">
+                <p class="first admonition-title">Замечание для программистов на C/C++</p>
+                <p class="last">В Python нет отдельного типа данных <code class="docutils literal"><span class="pre">char</span></code>
+                    (символ). В нём нет нужды, и я
+                    уверен, что вы не будете по нему скучать.</p>
+            </div>
+            <div class="admonition-perl-php admonition">
+                <p class="first admonition-title">Замечание для программистов на Perl/PHP</p>
+                <p class="last">Помните, что строки в двойных кавычках и в одинарных эквивалентны, и ничем
+                    друг от друга не отличаются.</p>
+            </div>
+        </div>
+        <div class="section" id="format">
+            <h3>Метод format<a class="headerlink" href="#format" title="Ссылка на этот заголовок">¶</a></h3>
+            <p>Иногда бывает нужно составить строку на основе каких-либо данных. Вот здесь-то
+                и пригождается метод <code class="docutils literal"><span class="pre">format()</span></code>.</p>
+            <p>Сохраните следующие строки в файл <code class="docutils literal"><span
+                    class="pre">str_format.py</span></code>:</p>
+            <div class="highlight-python">
+                <div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span
+                        class="mi">26</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Swaroop&#39;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Возраст {0} -- {1} лет.&#39;</span><span
+                            class="o">.</span><span class="n">format</span><span class="p">(</span><span
+                            class="n">name</span><span class="p">,</span> <span class="n">age</span><span
+                            class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span
+                            class="s1">&#39;Почему {0} забавляется с этим Python?&#39;</span><span
+                            class="o">.</span><span class="n">format</span><span class="p">(</span><span
+                            class="n">name</span><span class="p">))</span>
+</pre>
+                </div>
+            </div>
+            <p>Вывод:</p>
+            <div class="highlight-default">
+                <div class="highlight"><pre><span></span>$ python str_format.py
+Возраст Swaroop -- 26 лет.
+Почему Swaroop забавляется с этим Python?
+</pre>
+                </div>
+            </div>
+            <p><strong>Как это работает:</strong></p>
+            <blockquote>
+                <div><p>В строку могут быть включены определённые обозначения, а впоследствии может
+                    быть вызван метод <code class="docutils literal"><span class="pre">format</span></code> для
+                    замещения этих обозначений соответствующими
+                    аргументами.</p>
+                    <p>Взгляните на первый случай применения обозначений, где мы пишем <code
+                            class="docutils literal"><span class="pre">{0}</span></code>, и это
+                        соответствует переменной <code class="docutils literal"><span class="pre">name</span></code>,
+                        являющейся первым аргументом метода
+                        <code class="docutils literal"><span class="pre">format</span></code>. Аналогично, второе
+                        обозначение <code class="docutils literal"><span class="pre">{1}</span></code> соответствует
+                        переменной
+                        <code class="docutils literal"><span class="pre">age</span></code>, являющейся вторым аргументом
+                        метода <code class="docutils literal"><span class="pre">format</span></code>. Заметьте, что
+                        Python
+                        начинает отсчёт с 0, поэтому первая позиция &#8211; номер 0, вторая &#8211; номер 1 и
+                        т.д.</p>
+                    <p>Заметьте, мы ведь могли добиться того же самого результата и объединением
+                        строк: <code class="docutils literal"><span class="pre">'Возраст'</span> <span
+                                class="pre">+</span> <span class="pre">name</span> <span class="pre">+</span> <span
+                                class="pre">'</span> <span class="pre">--</span> <span class="pre">'</span> <span
+                                class="pre">+</span> <span class="pre">str(age)</span> <span class="pre">+</span> <span
+                                class="pre">'</span> <span class="pre">лет.'</span></code>, однако вы сами
+                        видите, как это некрасиво, и как легко в таком случае допустить ошибку.
+                        Во-вторых, преобразование в строку делается методом <code class="docutils literal"><span
+                                class="pre">format</span></code> автоматически,
+                        в отличие от явного преобразования в нашем примере. В-третьих, используя метод
+                        <code class="docutils literal"><span class="pre">format</span></code>, мы можем изменить
+                        сообщение, не затрагивая используемых
+                        переменных, и наоборот.</p>
+                    <p>На всякий случай имейте в виду, что цифры здесь не обязательны. Можно было бы
+                        просто написать:</p>
+                    <div class="highlight-python">
+                        <div class="highlight"><pre><span></span><span class="n">age</span> <span
+                                class="o">=</span> <span class="mi">26</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Swaroop&#39;</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Возраст {} -- {} лет.&#39;</span><span
+                                    class="o">.</span><span class="n">format</span><span class="p">(</span><span
+                                    class="n">name</span><span class="p">,</span> <span class="n">age</span><span
+                                    class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span
+                                    class="s1">&#39;Почему {} забавляется с этим Python?&#39;</span><span
+                                    class="o">.</span><span class="n">format</span><span class="p">(</span><span
+                                    class="n">name</span><span class="p">))</span>
+</pre>
+                        </div>
+                    </div>
+                    <p>и получить такой же результат, как и ранее.</p>
+                </div>
+            </blockquote>
+            <p>В методе <code class="docutils literal"><span class="pre">format</span></code> Python помещает значение
+                каждого аргумента в обозначенное
+                место. Могут быть и более детальные обозначения, как то:</p>
+            <div class="highlight-python">
+                <div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;{0:.3}&#39;</span><span
+                        class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span
+                        class="o">/</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># десятичное число (.) с точностью в 3 знака для плавающих</span>
+<span class="go">&#39;0.333&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;{0:_^11}&#39;</span><span class="o">.</span><span class="n">format</span><span
+                            class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span> <span
+                            class="c1"># заполнить подчёркиваниями (_) с центровкой текста (^) по ширине 11</span>
+<span class="go">&#39;___hello___&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;{name} написал {book}&#39;</span><span
+                            class="o">.</span><span class="n">format</span><span class="p">(</span><span
+                            class="n">name</span><span class="o">=</span><span class="s1">&#39;Swaroop&#39;</span><span
+                            class="p">,</span> <span class="n">book</span><span class="o">=</span><span class="s1">&#39;A Byte of Python&#39;</span><span
+                            class="p">)</span> <span class="c1"># по ключевым словам</span>
+<span class="go">&#39;Swaroop написал A Byte of Python&#39;</span>
+</pre>
+                </div>
+            </div>
+            <p>Детально такие обозначения форматов описаны в Предложении по расширению Python
+                <span class="target" id="index-0"></span><a class="pep reference external"
+                                                            href="https://www.python.org/dev/peps/pep-3101"><strong>PEP
+                    3101</strong></a>.</p>
+        </div>
+    </div>
+    <div class="section" id="id14">
+        <h2>Переменные<a class="headerlink" href="#id14" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Использование одних лишь литеральных констант может скоро наскучить &#8211; нам ведь
+            нужен способ хранения любой информации и манипулирования ею. Вот здесь на сцену
+            выходят <em>переменные</em>. Слово &#8220;переменные&#8221; говорит само за себя &#8211; их значение
+            может меняться, а значит, вы можете хранить в переменной всё, что угодно.
+            Переменные &#8211; это просто области памяти компьютера, в которых вы храните
+            некоторую информацию. В отличие от констант, к такой информации нужно каким-то
+            образом получать доступ, поэтому переменным даются имена.</p>
+    </div>
+    <div class="section" id="id15">
+        <h2>Имена идентификаторов<a class="headerlink" href="#id15" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Переменные &#8211; это частный случай идентификаторов. <em>Идентификаторы</em> &#8211; это имена,
+            присвоенные <em>чему-то</em> для его обозначения. При выборе имён для идентификаторов
+            необходимо соблюдать следующие правила:</p>
+        <ul class="simple">
+            <li>Первым символом идентификатора должна быть буква из алфавита (символ ASCII в
+                верхнем или нижнем регистре, или символ Unicode), а также символ подчёркивания
+                (&#8220;_&#8221;).
+            </li>
+            <li>Остальная часть идентификатора может состоять из букв (символы ASCII в верхнем
+                или нижнем регистре, а также символы Unicode), знаков подчёркивания (&#8220;_&#8221;) или
+                цифр (0-9).
+            </li>
+            <li>Имена идентификаторов чувствительны к регистру. Например, <code class="docutils literal"><span
+                    class="pre">myname</span></code> и
+                <code class="docutils literal"><span class="pre">myName</span></code> &#8211; это <strong>не</strong>
+                одно и то же. Обратите внимание на &#8220;<code class="docutils literal"><span
+                        class="pre">n</span></code>&#8221; в нижнем
+                регистре в первом случае и &#8220;<code class="docutils literal"><span class="pre">N</span></code>&#8221;
+                в верхнем во втором.
+            </li>
+            <li>Примеры <em>допустимых</em> имён идентификаторов: <code class="docutils literal"><span
+                    class="pre">i</span></code>, <code class="docutils literal"><span
+                    class="pre">__my_name</span></code>, <code class="docutils literal"><span class="pre">name_23</span></code>,
+                <code class="docutils literal"><span class="pre">a1b2_c3</span></code> и <code class="docutils literal"><span
+                        class="pre">любые_символы_utf8_δξѪђёўЩӆΞέά</span></code>.
+            </li>
+            <li>Примеры <em>недопустимых</em> имён идентификаторов: <code class="docutils literal"><span class="pre">2things</span></code>,
+                <code class="docutils literal"><span class="pre">здесь</span> <span class="pre">есть</span>
+                    <span class="pre">пробелы</span></code>, <code class="docutils literal"><span
+                        class="pre">my-name</span></code>, <code class="docutils literal"><span
+                        class="pre">&gt;a1b2_c3</span></code> и <code class="docutils literal"><span class="pre">&quot;это_в_кавычках&quot;</span></code>.
+            </li>
+        </ul>
+    </div>
+    <div class="section" id="id16">
+        <h2>Типы данных<a class="headerlink" href="#id16" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Переменные могут хранить значения разных типов, называемых <strong>типами данных</strong>.
+            Основными типами являются числа и строки, о которых мы уже говорили. В
+            дальнейших главах мы увидим, как создавать свои собственные типы при помощи
+            <a class="reference internal" href="object_oriented_programming.html"><span class="doc">классов</span></a>.
+        </p>
+    </div>
+    <div class="section" id="id17">
+        <h2>Объекты<a class="headerlink" href="#id17" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Помните, Python рассматривает всё, что есть в программе, как <em>объекты</em>.
+            Имеется в виду, в самом общем смысле. Вместо того, чтобы говорить &#8220;<em>нечто</em>&#8221;, мы
+            говорим &#8220;<em>объект</em>&#8221;.</p>
+        <div class="admonition- admonition">
+            <p class="first admonition-title">Замечание для программистов в объектно-ориентированном стиле</p>
+            <p class="last">Python строго объектно ориентирован в том смысле, что объектом является всё,
+                включая числа, строки и функции.</p>
+        </div>
+        <p>Сейчас мы увидим, как использовать переменные наряду с константами. Сохраните
+            следующий пример и запустите программу.</p>
+        <div class="admonition-python admonition">
+            <p class="first admonition-title">Как писать программы на Python</p>
+            <p>Впредь стандартная процедура сохранения и запуска программы на Python будет
+                выглядеть так:</p>
+            <ol class="last arabic simple">
+                <li>Откройте ваш любимый редактор, например Komodo Edit.</li>
+                <li>Введите текст программы из примера.</li>
+                <li>Сохраните его в файл, указав его имя в комментарии. Я следую правилу
+                    сохранять все программы на Python с расширением <code class="docutils literal"><span
+                            class="pre">.py</span></code>.
+                </li>
+                <li>Запустите интерпретатор командой <code class="docutils literal"><span class="pre">python3</span>
+                    <span class="pre">program.py</span></code>. Кроме того, вы
+                    можете сделать программу <a class="reference internal"
+                                                href="first_steps.html#first-executable"><span class="std std-ref">исполнимой</span></a>,
+                    как
+                    объяснялось ранее.
+                </li>
+            </ol>
+        </div>
+        <div class="section" id="id18">
+            <h3>Пример: Использование переменных и констант<a class="headerlink" href="#id18"
+                                                              title="Ссылка на этот заголовок">¶</a></h3>
+            <div class="highlight-python">
+                <div class="highlight"><pre><span></span><span class="c1"># Имя файла : var.py</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span
+                            class="mi">1</span>
+<span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;Это многострочная строка.</span>
+<span class="s1">Это вторая её строчка.&#39;&#39;&#39;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre>
+                </div>
+            </div>
+            <p><strong>Вывод:</strong></p>
+            <div class="highlight-default">
+                <div class="highlight"><pre><span></span>$ python var.py
+5
+6
+Это многострочная строка.
+Это вторая её строчка.
+</pre>
+                </div>
+            </div>
+            <p><strong>Как это работает:</strong></p>
+            <blockquote>
+                <div><p>Вот как эта программа работает. Сперва мы присваиваем значение константы
+                    <code class="docutils literal"><span class="pre">5</span></code> переменной <code
+                            class="docutils literal"><span class="pre">i</span></code>, используя оператор присваивания
+                    (<code class="docutils literal"><span class="pre">=</span></code>). Эта строка
+                    называется предложением и указывает, что должно быть произведено некоторое
+                    действие, и в данном случае мы связываем имя переменной <code class="docutils literal"><span
+                            class="pre">i</span></code> со значением
+                    <code class="docutils literal"><span class="pre">5</span></code>. Затем мы печатаем значение <code
+                            class="docutils literal"><span class="pre">i</span></code>, используя функцию <code
+                            class="docutils literal"><span class="pre">print</span></code>, которая
+                    просто печатает значение переменной на экране.</p>
+                    <p>Далее мы добавляем <code class="docutils literal"><span class="pre">1</span></code> к значению,
+                        хранящемуся в <code class="docutils literal"><span class="pre">i</span></code> и сохраняем его
+                        там.
+                        После этого мы печатаем его и получаем значение <code class="docutils literal"><span
+                                class="pre">6</span></code>, что неудивительно.</p>
+                    <p>Аналогичным образом мы присваиваем строковую константу переменной <code class="docutils literal"><span
+                            class="pre">s</span></code>,
+                        после чего печатаем её.</p>
+                </div>
+            </blockquote>
+            <div class="admonition- admonition">
+                <p class="first admonition-title">Замечание для программистов на статических языках
+                    программирования</p>
+                <p class="last">Переменные используются простым присваиванием им значений. Никакого
+                    предварительного объявления или определения типа данных не
+                    требуется/применяется.</p>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="id19">
+        <h2>Логические и физические строки<a class="headerlink" href="#id19" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Физическая строка &#8211; это то, что вы <em>видите</em>, когда набираете программу.
+            Логическая строка &#8211; это то, что <em>Python видит</em> как единое предложение.
+            Python неявно предполагает, что каждой <em>физической строке</em> соответствует
+            <em>логическая строка</em>.</p>
+        <p>Примером логической строки может служить предложение <code class="docutils literal"><span class="pre">print('Привет,</span>
+            <span class="pre">Мир!')</span></code>
+            &#8211; если оно на одной строке (как вы видите это в редакторе), то эта строка
+            также соответствует физической строке.</p>
+        <p>Python неявно стимулирует использование по одному предложению на строку, что
+            облегчает чтение кода.</p>
+        <p>Чтобы записать более одной логической строки на одной физической строке, вам
+            придётся явно указать это при помощи точки с запятой (<code class="docutils literal"><span
+                    class="pre">;</span></code>), которая отмечает
+            конец логической строки/предложения. Например,</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p>то же самое, что</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span
+                    class="p">;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</pre>
+            </div>
+        </div>
+        <p>и то же самое может быть записано в виде</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span
+                    class="p">;</span> <span class="k">print</span><span class="p">(</span><span class="n">i</span><span
+                    class="p">);</span>
+</pre>
+            </div>
+        </div>
+        <p>или даже</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span><span
+                    class="p">;</span> <span class="k">print</span><span class="p">(</span><span class="n">i</span><span
+                    class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p>Однако я <strong>настоятельно рекомендую</strong> вам придерживаться <strong>написания одной
+            логической строки в каждой физической строке</strong>. Таким образом вы можете обойтись
+            совсем без точки с запятой. Кстати, я <em>никогда</em> не использовал и даже не
+            встречал точки с запятой в программах на Python.</p>
+        <p>Можно использовать более одной физической строки для логической строки, но к
+            этому следует прибегать лишь в случае очень длинных строк. Пример написания
+            одной логической строки, занимающей несколько физических строк, приведён ниже.
+            Это называется <strong>явным объединением строк</strong>.</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;Это строка. </span><span
+                    class="se">\</span>
+<span class="s1">Это строка продолжается.&#39;</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p>Это даст результат:</p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span><span class="n">Это</span> <span class="n">строка</span><span
+                    class="o">.</span> <span class="n">Это</span> <span class="n">строка</span> <span class="n">продолжается</span><span
+                    class="o">.</span>
+</pre>
+            </div>
+        </div>
+        <p>Аналогично,</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">print</span>\
+<span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p>то же самое, что и</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">print</span><span class="p">(</span><span
+                    class="n">i</span><span class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p>Иногда имеет место неявное подразумевание, когда использование обратной косой
+            черты не обязательно. Это относится к случаям, когда в логической строке есть
+            открывающаяся круглая, квадратная или фигурная скобка, но нет закрывающейся.
+            Это называется <strong>неявным объединением строк</strong>. Вы сможете увидеть это в действии
+            в программах с использованием <a class="reference internal" href="data_structures.html#data-list"><span
+                    class="std std-ref">списков</span></a> в дальнейших главах.</p>
+    </div>
+    <div class="section" id="id20">
+        <h2>Отступы<a class="headerlink" href="#id20" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>В Python пробелы важны. Точнее, <strong>пробелы в начале строки важны</strong>. Это
+            называется <strong>отступами</strong>. Передние отступы (пробелы и табуляции) в начале
+            логической строки используются для определения уровня отступа логической строки,
+            который, в свою очередь, используется для группировки предложений.</p>
+        <p>Это означает, что предложения, идущие вместе, <strong>должны</strong> иметь одинаковый
+            отступ. Каждый такой набор предложений называется <strong>блоком</strong>. В дальнейших
+            главах мы увидим примеры того, насколько важны блоки.</p>
+        <p>Вы должны запомнить, что неправильные отступы могут приводить к возникновению
+            ошибок. Например:</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>
+ <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Значение составляет &#39;</span><span
+                        class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="c1"># Ошибка! Обратите внимание на первый пробел в начале строки</span>
+<span class="k">print</span><span class="p">(</span><span
+                        class="s1">&#39;Я повторяю, значение составляет &#39;</span><span class="p">,</span> <span
+                        class="n">i</span><span class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p>Когда вы запустите это, вы получите следующую ошибку:</p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span><span class="n">File</span> <span class="s2">&quot;whitespace.py&quot;</span><span
+                    class="p">,</span> <span class="n">line</span> <span class="mi">4</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Значение составляет &#39;</span><span
+                        class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="c1"># Ошибка! Обратите внимание на первый пробел в начале строки</span>
+  <span class="o">^</span>
+<span class="ne">IndentationError</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">indent</span>
+</pre>
+            </div>
+        </div>
+        <p>Обратите внимание на то, что в начале второй строки есть один пробел. Ошибка,
+            отображённая Python, говорит нам о том, что синтаксис программы неверен, т.е.
+            программа не была написана по правилам. Для вас же это означает, что <em>вы не
+                можете начинать новые блоки предложений где попало</em> (кроме основного блока по
+            умолчанию, который используется на протяжении всей программы, конечно).
+            Случаи, в которых вы можете использовать новые блоки, будут подробно описаны в
+            дальнейших главах, как например, в <a class="reference internal" href="control_flow.html"><span class="doc">главе &#8220;Поток команд&#8221;</span></a>.
+        </p>
+        <div class="admonition- admonition">
+            <p class="first admonition-title">Как отступать</p>
+            <p><strong>Не</strong> смешивайте пробелы и символы табуляции в отступах, поскольку не на
+                всех платформах это работает корректно. Я <em>настоятельно рекомендую</em> вам
+                использовать <em>одиночную табуляцию</em> или <em>четыре пробела</em> для каждого
+                уровня отступа.</p>
+            <p>Выберите какой-нибудь один из этих стилей отступа. Но что ещё более важно,
+                это использовать выбранный стиль <strong>постоянно</strong>, а также соблюдать стиль
+                редактируемых вами файлов. Т.е. когда вы пишете новый файл, используйте
+                <em>только</em> один ваш любимый стиль, а если в редактируемом вами файле для
+                отступов уже используются, скажем, символы табуляции, то и вы используйте в
+                этом файле символы табуляции для отступов.</p>
+            <p class="last">Хорошие редакторы, такие как Komodo Edit, будут делать это автоматически.</p>
+        </div>
+        <div class="admonition- admonition">
+            <p class="first admonition-title">Замечание для программистов на статических языках
+                программирования</p>
+            <p class="last">Python всегда будет использовать отступы для выделения блоков и никогда не
+                будет использовать скобки. Введите <code class="docutils literal"><span class="pre">from</span> <span
+                        class="pre">__future__</span> <span class="pre">import</span> <span
+                        class="pre">braces</span></code>, чтобы
+                узнать больше.</p>
+        </div>
+    </div>
+    <div class="section" id="id21">
+        <h2>Резюме<a class="headerlink" href="#id21" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Теперь, когда мы прошли через множество жизненно важных мелочей, можно перейти
+            к более интересным вещам &#8211; таким как управляющие конструкции. Но сначала как
+            следует освойтесь с прочитанным в настоящей главе.</p>
+    </div>
+    <div class="section" id="id22">
+        <h2>Примечания<a class="headerlink" href="#id22" title="Ссылка на этот заголовок">¶</a></h2>
+        <table class="docutils footnote" frame="void" id="id23" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id5">[1]</a></td>
+                <td>&#8220;literal&#8221; &#8211; <em>англ.</em> &#8220;буквальный&#8221;; вспомните &#8220;литера&#8221;
+                    (<em>син.</em> &#8220;буква&#8221;).
+                    (<em>прим. перев.</em>)
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

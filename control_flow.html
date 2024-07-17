@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Поток команд</title>
+    <link rel="shortcut icon" type="image/ico" href="python-logo.png"/>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css"/>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
+</head>
+<body>
+<style> body {background: #ccc;} </style>
+
+<div style="float: left;position: absolute;top: 0px; width: 200px;height: 5470px; padding: 25px;background: #C8A98F;color: #8B4513;margin: 0px;">
+    <p><A href="Главная страница.html" style="color: #8B4513;font-size: 20px;text-decoration: none;" target="_blank">Главная
+        страница</A></p>
+
+    <p><A href="Книга.html" style="color: #8B4513;text-decoration: none;" target="_blank">Теория</A></p>
+
+    <p><A href="Обучающие видео.html" style="color: #8B4513;text-decoration: none;" target="_blank">Обучающие видео</A>
+    </p>
+
+    <p><A href="Exercieses.html" style="color: #8B4513;text-decoration: none;" target="_blank">Практика</A></p>
+</div>
+
+<div class="section" id="id1" style="margin-left: 270px; display: absolute; background: #ccc;">
+    <h1>Поток команд<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+    <p>В программах, которые мы до сих пор рассматривали, последовательность команд
+        всегда выполнялась Python по порядку строго сверху вниз. А что, если нам
+        необходимо изменить поток выполняющихся команд? Например, если требуется, чтобы
+        программа принимала некоторое решение и выполняла различные действия в
+        зависимости от ситуации; скажем, печатала &#8220;Доброе утро&#8221; или &#8220;Добрый вечер&#8221; в
+        зависимости от времени суток.</p>
+    <p>Как вы уже, наверное, догадались, этого можно достичь при помощи операторов
+        управления потоком. В Python есть три оператора управления потоком: <code class="docutils literal"><span
+                class="pre">if</span></code>,
+        <code class="docutils literal"><span class="pre">for</span></code> и <code class="docutils literal"><span
+                class="pre">while</span></code>.</p>
+    <div class="section" id="if">
+        <h2>Оператор if<a class="headerlink" href="#if" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Оператор <code class="docutils literal"><span class="pre">if</span></code> используется для проверки условий:
+            <em>если</em><a class="footnote-reference" href="#id13" id="id2">[1]</a> условие верно<a
+                    class="footnote-reference" href="#id14" id="id3">[2]</a>, выполняется блок выражений (называемый
+            &#8220;if-блок&#8221;), <em>иначе</em><a class="footnote-reference" href="#id15" id="id4">[3]</a>
+            выполняется другой блок выражений (называемый &#8220;else-блок&#8221;). Блок &#8220;else&#8221;
+            является необязательным.</p>
+        <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span class="pre">if.py</span></code>)
+        </p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span
+                    class="mi">23</span>
+<span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span
+                        class="nb">input</span><span class="p">(</span><span
+                        class="s1">&#39;Введите целое число : &#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span><span
+                        class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Поздравляю, вы угадали,&#39;</span><span
+                        class="p">)</span> <span class="c1"># Здесь начинается новый блок</span>
+    <span class="k">print</span><span class="p">(</span><span
+                        class="s1">&#39;(хотя и не выиграли никакого приза!)&#39;</span><span class="p">)</span> <span
+                        class="c1"># Здесь заканчивается новый блок</span>
+<span class="k">elif</span> <span class="n">guess</span> <span class="o">&lt;</span> <span class="n">number</span><span
+                        class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Нет, загаданное число немного больше этого.&#39;</span><span
+                        class="p">)</span> <span class="c1"># Ещё один блок</span>
+    <span class="c1"># Внутри блока вы можете выполнять всё, что угодно ...</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Нет, загаданное число немного меньше этого.&#39;</span><span
+                        class="p">)</span>
+    <span class="c1"># чтобы попасть сюда, guess должно быть больше, чем number</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Завершено&#39;</span><span class="p">)</span>
+<span class="c1"># Это последнее выражение выполняется всегда после выполнения оператора if</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python if.py
+Введите целое число : 50
+Нет, загаданное число немного меньше этого.
+Завершено
+
+$ python if.py
+Введите целое число : 22
+Нет, загаданное число немного больше этого.
+Завершено
+
+$ python if.py
+Введите целое число : 23
+Поздравляю, вы угадали,
+(хотя и не выиграли никакого приза!)
+Завершено
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>В этой программе мы принимаем варианты от пользователя и проверяем,
+                совпадают ли они с заранее заданным числом. Мы устанавливаем переменной
+                <code class="docutils literal"><span class="pre">number</span></code> значение любого целого числа,
+                какого хотим. Например, <code class="docutils literal"><span class="pre">23</span></code>.
+                После этого мы принимаем вариант числа от пользователя при помощи функции
+                <code class="docutils literal"><span class="pre">input()</span></code>. Функции &#8211; это
+                всего-навсего многократно используемые фрагменты
+                программы. Мы узнаем о них больше в <a class="reference internal" href="functions.html"><span
+                        class="doc">следующей главе</span></a>.</p>
+                <p>Мы передаём встроенной функции <code class="docutils literal"><span class="pre">input</span></code>
+                    строку, которую она выводит на экран
+                    и ожидает ввода от пользователя. Как только мы ввели что-нибудь и нажали
+                    клавишу <code class="docutils literal"><span class="pre">Enter</span></code>, функция <code
+                            class="docutils literal"><span class="pre">input()</span></code> возвращает строку, которую
+                    мы ввели.
+                    Затем мы преобразуем полученную строку в число при помощи <code class="docutils literal"><span
+                            class="pre">int()</span></code>, и
+                    сохраняем это значение в переменную <code class="docutils literal"><span
+                            class="pre">guess</span></code>. Вообще-то, <code class="docutils literal"><span
+                            class="pre">int</span></code> &#8211; это
+                    класс, но на данном этапе вам достаточно знать лишь, что при помощи него
+                    можно преобразовать строку в целое число (предполагая, что строка содержит
+                    целое число).</p>
+                <p>Далее мы сравниваем число, введённое пользователем, с числом, которое мы
+                    выбрали заранее. Если они равны, мы печатаем сообщение об успехе. Обратите
+                    внимание, что мы используем соответствующие уровни отступа, чтобы указать
+                    Python, какие выражения относятся к какому блоку. Вот почему отступы так
+                    важны в Python. Я надеюсь, вы придерживаетесь правила &#8220;постоянных отступов&#8221;,
+                    не так ли?</p>
+                <p>Обратите внимание, что в конце оператора <code class="docutils literal"><span
+                        class="pre">if</span></code> стоит двоеточие &#8211; этим мы
+                    показываем, что далее следует блок выражений.</p>
+                <p>После этого мы проверяем, верно ли, что пользовательский вариант числа меньше
+                    загаданного, и если это так, мы информируем пользователя о том, что ему
+                    следует выбирать числа немного больше этого. Здесь мы использовали выражение
+                    <code class="docutils literal"><span class="pre">elif</span></code>, которое попросту объединяет в
+                    себе два связанных <code class="docutils literal"><span class="pre">if</span> <span class="pre">else-if</span>
+                        <span class="pre">else</span></code>
+                    выражения в одно выражение <code class="docutils literal"><span
+                            class="pre">if-elif-else</span></code>. Это облегчает чтение программы,
+                    а также не требует дополнительных отступов.</p>
+                <p>Выражения <code class="docutils literal"><span class="pre">elif</span></code> и <code
+                        class="docutils literal"><span class="pre">else</span></code> также имеют двоеточие в конце
+                    логической строки,
+                    за которым следуют соответствующие блоки команд (с соответствующим числом
+                    отступов, конечно).</p>
+                <p>Внутри if-блока оператора <code class="docutils literal"><span class="pre">if</span></code> может
+                    быть другой оператор <code class="docutils literal"><span class="pre">if</span></code> и
+                    так далее &#8211; это называется вложенным<a class="footnote-reference" href="#id16"
+                                                                 id="id5">[4]</a> оператором <code
+                            class="docutils literal"><span class="pre">if</span></code>.</p>
+                <p>Помните, что части <code class="docutils literal"><span class="pre">elif</span></code> и <code
+                        class="docutils literal"><span class="pre">else</span></code> не обязательны. Минимальная
+                    корректная
+                    запись оператора <code class="docutils literal"><span class="pre">if</span></code> такова:</p>
+                <div class="highlight-python">
+                    <div class="highlight"><pre><span></span><span class="k">if</span> <span class="bp">True</span><span
+                            class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Да, это верно.&#39;</span><span class="p">)</span>
+</pre>
+                    </div>
+                </div>
+                <p>После того, как Python заканчивает выполнение всего оператора <code class="docutils literal"><span
+                        class="pre">if</span></code> вместе с
+                    его частями <code class="docutils literal"><span class="pre">elif</span></code> и <code
+                            class="docutils literal"><span class="pre">else</span></code>, он переходит к следующему
+                    выражению в блоке,
+                    содержащем этот оператор <code class="docutils literal"><span class="pre">if</span></code>. В нашем
+                    случае это основной блок программы
+                    (в котором начинается выполнение программы), а следующее выражение &#8211; это
+                    <code class="docutils literal"><span class="pre">print('Завершено')</span></code>. После этого
+                    Python доходит до конца программы и
+                    просто выходит из неё.</p>
+            </div>
+        </blockquote>
+        <p>Хотя это и чрезвычайно простая программа, я указал вам на целый ряд вещей,
+            которые стоит взять на заметку. Всё это довольно легко (даже удивительно
+            легко для тех из вас, кто пришёл из мира C/C++). Поначалу вам придётся держать
+            все эти вещи в памяти, но после некоторой практики вы привыкнете, и они вам
+            покажутся вполне &#8220;естественными&#8221;.</p>
+        <div class="admonition-c-c admonition">
+            <p class="first admonition-title">Замечание для программистов на C/C++</p>
+            <p class="last">В Python нет оператора <code class="docutils literal"><span class="pre">switch</span></code>.
+                Однако, при помощи конструкции
+                <code class="docutils literal"><span class="pre">if..elif..else</span></code> можно достичь того же
+                самого (а в некоторых случаях можно
+                даже использовать <a class="reference internal" href="data_structures.html#dictionary"><span
+                        class="std std-ref">словарь</span></a>, чтобы сделать это быстро).</p>
+        </div>
+    </div>
+    <div class="section" id="while">
+        <h2>Оператор while<a class="headerlink" href="#while" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Оператор <code class="docutils literal"><span class="pre">while</span></code> позволяет многократно выполнять
+            блок команд до тех пор,
+            пока выполняется некоторое условие. Это один из так называемых <em>операторов
+                цикла</em>. Он также может иметь необязательный пункт <code class="docutils literal"><span class="pre">else</span></code>.
+        </p>
+        <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span
+                class="pre">while.py</span></code>)</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span
+                    class="mi">23</span>
+<span class="n">running</span> <span class="o">=</span> <span class="bp">True</span>
+
+<span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span
+                        class="nb">input</span><span class="p">(</span><span
+                        class="s1">&#39;Введите целое число : &#39;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">guess</span> <span class="o">==</span> <span class="n">number</span><span
+                        class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span
+                        class="s1">&#39;Поздравляю, вы угадали.&#39;</span><span class="p">)</span>
+        <span class="n">running</span> <span class="o">=</span> <span class="bp">False</span> <span class="c1"># это останавливает цикл while</span>
+    <span class="k">elif</span> <span class="n">guess</span> <span class="o">&lt;</span> <span
+                        class="n">number</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Нет, загаданное число немного больше этого.&#39;</span><span
+                        class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Нет, загаданное число немного меньше этого.&#39;</span><span
+                        class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Цикл while закончен.&#39;</span><span
+                        class="p">)</span>
+    <span class="c1"># Здесь можете выполнить всё что вам ещё нужно</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Завершение.&#39;</span><span
+                        class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python while.py
+Введите целое число : 50
+Нет, загаданное число немного меньше этого.
+Введите целое число : 22
+Нет, загаданное число немного больше этого.
+Введите целое число : 23
+Поздравляю, вы угадали.
+Цикл while закончен.
+Завершение.
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>В этой программе мы продолжаем играть в игру с угадыванием, но преимущество
+                состоит в том, что теперь пользователь может угадывать до тех пор, пока не
+                угадает правильное число, и ему не придётся запускать программу заново для
+                каждой попытки, как это происходило до сих пор. Это наглядно демонстрирует
+                применение оператора <code class="docutils literal"><span class="pre">while</span></code>.</p>
+                <p>Мы переместили операторы <code class="docutils literal"><span class="pre">input</span></code> и <code
+                        class="docutils literal"><span class="pre">if</span></code> внутрь цикла <code
+                        class="docutils literal"><span class="pre">while</span></code> и
+                    установили переменную <code class="docutils literal"><span class="pre">running</span></code> в
+                    значение <code class="docutils literal"><span class="pre">True</span></code> перед запуском цикла.
+                    Прежде всего проверяется, равно ли значение переменной <code class="docutils literal"><span
+                            class="pre">running</span></code> <code class="docutils literal"><span
+                            class="pre">True</span></code>,
+                    а затем происходит переход к соответствующему <em>while-блоку</em>. После выполнения
+                    этого блока команд условие, которым в данном случае является переменная
+                    <code class="docutils literal"><span class="pre">running</span></code>, проверяется снова. Если оно
+                    истинно, while-блок запускается
+                    снова, в противном случае происходит переход к дополнительному else-блоку, а
+                    затем &#8211; к следующему оператору.</p>
+            </div>
+        </blockquote>
+        <p>Блок <code class="docutils literal"><span class="pre">else</span></code> выполняется тогда, когда условие
+            цикла <code class="docutils literal"><span class="pre">while</span></code> становится
+            ложным (<code class="docutils literal"><span class="pre">False</span></code>) &#8211; это может случиться
+            даже при самой первой проверке
+            условия. Если у цикла <code class="docutils literal"><span class="pre">while</span></code> имеется
+            дополнительный блок <code class="docutils literal"><span class="pre">else</span></code>, он
+            всегда выполняется, если только цикл не будет прерван оператором <code class="docutils literal"><span
+                    class="pre">break</span></code>.</p>
+        <p><code class="docutils literal"><span class="pre">True</span></code> и <code class="docutils literal"><span
+                class="pre">False</span></code> называются булевым типом данных, и вы можете считать их
+            эквивалентными значениям <code class="docutils literal"><span class="pre">1</span></code> и <code
+                    class="docutils literal"><span class="pre">0</span></code> соответственно.</p>
+        <div class="admonition-c-c admonition">
+            <p class="first admonition-title">Примечание для программистов на C/C++</p>
+            <p class="last">Помните, что у цикла <code class="docutils literal"><span class="pre">while</span></code>
+                может быть блок <code class="docutils literal"><span class="pre">else</span></code>.</p>
+        </div>
+    </div>
+    <div class="section" id="for">
+        <h2>Цикл for<a class="headerlink" href="#for" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Оператор <code class="docutils literal"><span class="pre">for..in</span></code> также является оператором
+            цикла, который осуществляет
+            <em>итерацию</em> по последовательности объектов, т.е. проходит через каждый элемент
+            в последовательности. Мы узнаем больше о <a class="reference internal"
+                                                        href="data_structures.html#dat-sequences"><span
+                    class="std std-ref">последовательностях</span></a>
+            в дальнейших главах, а пока просто запомните, что последовательность &#8211; это
+            упорядоченный набор элементов.</p>
+        <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span class="pre">for.py</span></code>)
+        </p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span
+                    class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span
+                    class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Цикл for закончен&#39;</span><span
+                        class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python for.py
+1
+2
+3
+4
+Цикл for закончен
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>В этой программе мы выводим на экран <em>последовательность</em> чисел. Мы
+                генерируем эту последовательность, используя встроенную функцию <code class="docutils literal"><span
+                        class="pre">range</span></code><a class="footnote-reference" href="#id17" id="id6">[5]</a>.</p>
+                <p>Мы задаём два числа, и <code class="docutils literal"><span class="pre">range</span></code>
+                    возвращает последовательность чисел от
+                    первого числа до второго. Например, <code class="docutils literal"><span
+                            class="pre">range(1,5)</span></code> даёт последовательность
+                    <code class="docutils literal"><span class="pre">[1,</span> <span class="pre">2,</span> <span
+                            class="pre">3,</span> <span class="pre">4]</span></code>. По умолчанию <code
+                            class="docutils literal"><span class="pre">range</span></code> принимает значение шага,
+                    равное 1.
+                    Если мы зададим также и третье число <code class="docutils literal"><span
+                            class="pre">range</span></code>, оно будет служить шагом.
+                    Например, <code class="docutils literal"><span class="pre">range(1,5,2)</span></code> даст <code
+                            class="docutils literal"><span class="pre">[1,3]</span></code>. Помните, интервал
+                    простирается
+                    только <em>до</em> второго числа, т.е. <strong>не</strong> включает его в себя.</p>
+                <p>Обратите внимание, что <code class="docutils literal"><span class="pre">range()</span></code>
+                    генерирует последовательность чисел, но
+                    только по одному числу за раз &#8211; когда оператор for запрашивает следующий
+                    элемент. Чтобы увидеть всю последовательность чисел сразу, используйте
+                    <code class="docutils literal"><span class="pre">list(range())</span></code>. Списки<a
+                            class="footnote-reference" href="#id18" id="id7">[6]</a> подробно рассматриваются в главе
+                    <a class="reference internal" href="data_structures.html#data-list"><span class="std std-ref">Структуры данных</span></a>.
+                </p>
+                <p>Затем цикл <code class="docutils literal"><span class="pre">for</span></code> осуществляет итерацию
+                    по этому диапазону - <code class="docutils literal"><span class="pre">for</span> <span
+                            class="pre">i</span> <span class="pre">in</span>
+                        <span class="pre">range(1,5)</span></code> эквивалентно <code class="docutils literal"><span
+                            class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span
+                            class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span
+                            class="pre">4]</span></code>, что напоминает
+                    присваивание переменной i по одному числу (или объекту) за раз, выполняя блок
+                    команд для каждого значения <code class="docutils literal"><span class="pre">i</span></code>. В
+                    данном случае в блоке команд мы просто
+                    выводим значение на экран.</p>
+            </div>
+        </blockquote>
+        <p>Помните, что блок <code class="docutils literal"><span class="pre">else</span></code> не обязателен. Если он
+            присутствует, он всегда
+            выполняется один раз после окончания цикла <code class="docutils literal"><span
+                    class="pre">for</span></code>, если только не указан
+            оператор <a class="reference internal" href="#break-operator"><span class="std std-ref">break</span></a>.
+        </p>
+        <p>Помните также, что цикл <code class="docutils literal"><span class="pre">for..in</span></code> работает для
+            любой последовательности. В
+            нашем случае это список чисел, сгенерированный встроенной функцией <code class="docutils literal"><span
+                    class="pre">range</span></code>,
+            но в общем случае можно использовать любую последовательность любых объектов!
+            В следующих разделах мы познакомимся с этим поближе.</p>
+        <div class="admonition-c-c-java-c admonition">
+            <p class="first admonition-title">Примечание для программистов на C/C++/Java/C#</p>
+            <p>Цикл <code class="docutils literal"><span class="pre">for</span></code> в Python радикально отличается от
+                цикла <code class="docutils literal"><span class="pre">for</span></code> в C/C++.
+                Программисты на C# заметят, что цикл <code class="docutils literal"><span class="pre">for</span></code>
+                в Python похож на цикл
+                <code class="docutils literal"><span class="pre">foreach</span></code> в C#. Программистам на Java это
+                может напомнить конструкцию
+                <code class="docutils literal"><span class="pre">for</span> <span class="pre">(int</span> <span
+                        class="pre">i</span> <span class="pre">:</span> <span class="pre">IntArray)</span></code> в Java
+                1.5.</p>
+            <p class="last">Если в C/C++ записать <code class="docutils literal"><span class="pre">for</span> <span
+                    class="pre">(int</span> <span class="pre">i</span> <span class="pre">=</span> <span
+                    class="pre">0;</span> <span class="pre">i</span> <span class="pre">&lt;</span> <span
+                    class="pre">5;</span> <span class="pre">i++)</span></code>, то в Python этому
+                соответствовало бы выражение <code class="docutils literal"><span class="pre">for</span> <span
+                        class="pre">i</span> <span class="pre">in</span> <span class="pre">range(0,5)</span></code>. Как
+                видно, в Python
+                цикл <code class="docutils literal"><span class="pre">for</span></code> проще, более выразителен и менее
+                подвержен ошибкам.</p>
+        </div>
+    </div>
+    <div class="section" id="break">
+        <span id="break-operator"></span>
+        <h2>Оператор break<a class="headerlink" href="#break" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Оператор <code class="docutils literal"><span class="pre">break</span></code> служит для
+            <em>прерывания</em><a class="footnote-reference" href="#id19" id="id8">[7]</a> цикла, т.е. остановки
+            выполнения команд даже если условие выполнения цикла ещё не приняло значения
+            <code class="docutils literal"><span class="pre">False</span></code> или последовательность элементов не
+            закончилась.</p>
+        <p>Важно отметить, что если циклы <code class="docutils literal"><span class="pre">for</span></code> или <code
+                class="docutils literal"><span class="pre">while</span></code> прервать оператором
+            <em>break</em>, соответствующие им блоки <code class="docutils literal"><span class="pre">else</span></code>
+            выполняться <strong>не</strong> будут.</p>
+        <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span
+                class="pre">break.py</span></code>)</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">while</span> <span class="bp">True</span><span
+                    class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span
+                        class="s1">&#39;Введите что-нибудь : &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s1">&#39;выход&#39;</span><span
+                        class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Длина строки:&#39;</span><span
+                        class="p">,</span> <span class="nb">len</span><span class="p">(</span><span
+                        class="n">s</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Завершение&#39;</span><span class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python break.py
+Введите что-нибудь : Программировать весело.
+Длина строки: 23
+Введите что-нибудь : Если работа скучна,
+Длина строки: 19
+Введите что-нибудь : Чтобы придать ей весёлый тон -
+Длина строки: 30
+Введите что-нибудь :       используй Python!
+Длина строки: 23
+Введите что-нибудь : выход
+Завершение
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>В этой программе мы многократно считываем пользовательский ввод и выводим на
+                экран длину каждой введённой строки. Для остановки программы мы вводим
+                специальное условие, проверяющее, совпадает ли пользовательский ввод со
+                строкой <code class="docutils literal"><span class="pre">'выход'</span></code>. Мы останавливаем
+                программу <em>прерыванием</em> цикла
+                оператором <code class="docutils literal"><span class="pre">break</span></code> и достигаем её конца.
+            </p>
+                <p>Длина введённой строки может быть найдена при помощи встроенной функции
+                    <code class="docutils literal"><span class="pre">len</span></code>.</p>
+                <p>Помните также, что оператор <code class="docutils literal"><span class="pre">break</span></code>
+                    может применяться и в цикле <code class="docutils literal"><span class="pre">for</span></code>.</p>
+            </div>
+        </blockquote>
+        <div class="section" id="python-swaroop">
+            <h3>Поэтический Python Swaroop&#8217;а<a class="headerlink" href="#python-swaroop"
+                                                     title="Ссылка на этот заголовок">¶</a></h3>
+            <p>Для ввода строк здесь я использовал мини-стишок, который сам сочинил. Он
+                называется <em>Поэтический Python Swaroop&#8217;а</em><a class="footnote-reference" href="#id20"
+                                                                         id="id9">[8]</a></p>
+            <blockquote>
+                <div>
+                    <div class="line-block">
+                        <div class="line">Программировать весело.</div>
+                        <div class="line">Если работа скучна,</div>
+                        <div class="line">Чтобы придать ей весёлый тон -</div>
+                        <div class="line-block">
+                            <div class="line">используй Python!</div>
+                        </div>
+                    </div>
+                </div>
+            </blockquote>
+        </div>
+    </div>
+    <div class="section" id="continue">
+        <h2>Оператор continue<a class="headerlink" href="#continue" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Оператор <code class="docutils literal"><span class="pre">continue</span></code> используется для указания
+            Python, что необходимо
+            пропустить все оставшиеся команды в текущем блоке цикла и <em>продолжить</em><a class="footnote-reference"
+                                                                                            href="#id21"
+                                                                                            id="id10">[9]</a>
+            со следующей итерации цикла.</p>
+        <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span
+                class="pre">continue.py</span></code>)</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">while</span> <span class="bp">True</span><span
+                    class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span
+                        class="s1">&#39;Введите что-нибудь : &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s1">&#39;выход&#39;</span><span
+                        class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span
+                        class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Слишком мало&#39;</span><span
+                        class="p">)</span>
+        <span class="k">continue</span>
+    <span class="k">print</span><span class="p">(</span><span
+                        class="s1">&#39;Введённая строка достаточной длины&#39;</span><span class="p">)</span>
+    <span class="c1"># Разные другие действия здесь...</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python continue.py
+Введите что-нибудь : a
+Слишком мало
+Введите что-нибудь : 12
+Слишком мало
+Введите что-нибудь : абв
+Введённая строка достаточной длины
+Введите что-нибудь : выход
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>В этой программе мы запрашиваем ввод со стороны пользователя, но обрабатываем
+                введённую строку только если она имеет длину хотя бы в 3 символа. Итак, мы
+                используем встроенную функцию <code class="docutils literal"><span class="pre">len</span></code> для
+                получения длины строки, и если
+                длина менее 3, мы пропускаем остальные действия в блоке при помощи оператора
+                <code class="docutils literal"><span class="pre">continue</span></code>. В противном случае все
+                остальные команды в цикле выполняются,
+                производя любые манипуляции, которые нам нужны.</p>
+                <p>Заметьте, что оператор <code class="docutils literal"><span class="pre">continue</span></code> также
+                    работает и с циклом <code class="docutils literal"><span class="pre">for</span></code>.</p>
+            </div>
+        </blockquote>
+    </div>
+    <div class="section" id="id11">
+        <h2>Резюме<a class="headerlink" href="#id11" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Мы увидели, как использовать три оператора для управления потоком команд:
+            <code class="docutils literal"><span class="pre">if</span></code>, <code class="docutils literal"><span
+                    class="pre">while</span></code> и <code class="docutils literal"><span class="pre">for</span></code>,
+            а также связанные с ними операторы <code class="docutils literal"><span class="pre">break</span></code> и
+            <code class="docutils literal"><span class="pre">continue</span></code>. Это наиболее часто используемые
+            конструкции Python, поэтому
+            овладеть ими очень важно.</p>
+        <p>Далее мы увидим, как создавать и использовать функции.</p>
+    </div>
+    <div class="section" id="id12">
+        <h2>Примечания<a class="headerlink" href="#id12" title="Ссылка на этот заголовок">¶</a></h2>
+        <table class="docutils footnote" frame="void" id="id13" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id2">[1]</a></td>
+                <td>if &#8211; <em>англ.</em> &#8220;если&#8221; (<em>прим.перев.</em>)</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id14" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id3">[2]</a></td>
+                <td>Соответствует булевому значению <code class="docutils literal"><span class="pre">True</span></code>
+                    (<em>прим.перев.</em>)
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id15" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id4">[3]</a></td>
+                <td>else &#8211; <em>англ.</em> &#8220;иначе&#8221;, &#8220;в противном случае&#8221;
+                    (<em>прим.перев.</em>)
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id16" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id5">[4]</a></td>
+                <td>nested &#8211; <em>англ.</em> &#8220;вложенный&#8221; (<em>прим.перев.</em>)</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id17" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id6">[5]</a></td>
+                <td>range &#8211; <em>англ.</em> &#8220;диапазон&#8221;, &#8220;интервал&#8221; (<em>прим.перев.</em>)
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id18" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id7">[6]</a></td>
+                <td>list &#8211; <em>англ.</em> &#8220;список&#8221; (<em>прим.перев.</em>)</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id19" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id8">[7]</a></td>
+                <td>break &#8211; <em>англ.</em> &#8220;разбивать&#8221;, &#8220;разрывать&#8221; (<em>прим.перев.</em>)
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id20" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id9">[8]</a></td>
+                <td>
+                    <div class="first last line-block">
+                        <div class="line"><strong>Swaroop&#8217;s Poetic Python</strong>:</div>
+                        <div class="line">Programming is fun.</div>
+                        <div class="line">When the work is done,</div>
+                        <div class="line">if you wanna make your work also fun:</div>
+                        <div class="line-block">
+                            <div class="line">use Python!</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id21" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id10">[9]</a></td>
+                <td>continue &#8211; <em>англ.</em> &#8220;продолжать&#8221; (<em>прим.перев.</em>)</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>

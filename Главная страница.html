@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+    <link rel="shortcut icon" type="image/ico" href="python-logo.png"/>
+    <link rel="shortcut icon" type="image/ico" href="python-logo.png"/>
+    <style>
+    .parent {
+    justify-content: center;
+    }
+
+    .wrapper {
+    display: flex;
+    margin: auto;
+    width: 900px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 100px;
+    }
+
+    .button {
+      top: 50%;   /* Вертикально по центру */
+      left: 50%;  /* Горизонтально по центру */
+
+      width: 150px;
+      height: 250px;
+      flex: 1 1 0;
+      margin: 0 10px;
+      display: inline-block;
+
+      max-width: 300px;
+      padding: 14px 20px;
+      border-radius: 5px;
+      background: #4ddcef45;
+      color: #333333;
+      font-size: 1.25em;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      -webkit-transition: background-color .1s ease-out;
+      transition: background-color .1s ease-out;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .button img {
+        width: 200px;  /* Измените размер по вашему вкусу */
+        height: 200px;
+    }
+
+    .hero__title {
+        font-family: Rubik One;
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 8em;
+        line-height: 1em;
+        text-align: center;
+        margin: 0.5em 0 0;
+        -webkit-transition: font-size .2s;
+        transition: font-size .2s;
+        -webkit-transition: all .2s ease;
+        transition: all .2s ease;
+        color: #4c62ba;
+        background-size: 200%;
+        -webkit-animation: a 10s ease infinite;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: #b47171;
+    }
+
+
+    .about-author {
+        background: #4ddcef45;
+        padding: 20px;
+        margin-bottom: 0px;
+        height: 230px;
+        margin: 0px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .author-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .author-photo {
+        width: 300px;
+        height: 80px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    .author-name {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .author-about {
+        top: 0px;
+        font-size: 1rem;
+        width: 75%;
+        text-align: center;
+    }
+
+    </style>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css"/>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
+</head>
+<body>
+
+<style> body {background: #ccc;} </style>
+<marquee
+        style="color:#f1f1f1;height: 80px;padding:0px;width: 97,5%;margin-left:0px;overflow: hidden;background: #333;animation: scroll 10s linear infinite;height: 40px;font-size: 30px">
+    Python - это эксперимент по определению степени свободы программистов. - Гвидо
+</marquee>
+
+<div class="hero__title">Учите Питон</div>
+
+
+<div class="wrapper" style="text-align: center;">
+    <a class="button button--option" href="Книга.html" target="_blank">
+        Теория
+        <img src="теория.png" alt="Теория">
+    </a>
+    <a class="button button--option" href="Обучающие видео.html" target="_blank">
+        Видеоуроки
+        <img src="видеоуроки.png" alt="Видеоуроки">
+    </a>
+    <a class="button button--option" href="Exercieses.html" target="_blank">
+        Практика
+        <img src="praktika.png" alt="Практика">
+    </a>
+</div>
+
+<div class="about-author">
+    <h2 style="margin-top: 20px;">Об авторе</h2>
+    <p class="author-name">Тельманов В. Е.</p>
+    <div class="author-info">
+        <a href="https://vk.com/..." target="_blank"><img src="VK2.png"> </a>
+        <img src="автор.png" alt="Автор" class="author-photo">
+        <p class="author-about"> Студент ТИУ. Впервые заинтересовался Python в возрасте 16 лет.</p>
+        <p class="author-about"> Использовал язык Python для сдачи ЕГЭ. Принимал участие в контестах университета.</p>
+        <p class="author-about"> Знаю английский язык на уровне, позволяющем мне узнавать новое на англоязычных ресурсах.</p>
+    </div>
+</div>
+
+
+</body>
+</html>

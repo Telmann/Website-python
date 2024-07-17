@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Функции</title>
+    <link rel="shortcut icon" type="image/ico" href="python-logo.png"/>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css"/>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
+</head>
+<body>
+<style> body {background: #ccc;} </style>
+
+<div style="float: left;position: absolute;top: 0px; width: 200px;height: 8230px; padding: 25px;background: #C8A98F;color: #8B4513;margin: 0px;">
+    <p><A href="Главная страница.html" style="color: #8B4513;font-size: 20px;text-decoration: none;" target="_blank">Главная
+        страница</A></p>
+
+    <p><A href="Книга.html" style="color: #8B4513;text-decoration: none;" target="_blank">Теория</A></p>
+
+    <p><A href="Обучающие видео.html" style="color: #8B4513;text-decoration: none;" target="_blank">Обучающие видео</A>
+    </p>
+
+    <p><A href="Exercieses.html" style="color: #8B4513;text-decoration: none;" target="_blank">Практика</A></p>
+</div>
+
+<div class="section" id="id1" style="margin-left: 270px; display: absolute; background: #ccc;">
+    <h1>Функции<a class="headerlink" href="#id1" title="Ссылка на этот заголовок">¶</a></h1>
+    <p>Функции &#8211; это многократно используемые фрагменты программы. Они позволяют
+        дать имя определённому блоку команд с тем, чтобы впоследствии запускать этот
+        блок по указанному имени в любом месте программы и сколь угодно много раз. Это
+        называется <em>вызовом</em> функции. Мы уже использовали много встроенных функций, как
+        то <code class="docutils literal"><span class="pre">len</span></code> и <code class="docutils literal"><span
+                class="pre">range</span></code>.</p>
+    <p>Функция &#8211; это, пожалуй, <em>наиболее</em> важный строительный блок любой
+        нетривиальной программы (на любом языке программирования), поэтому в этой главе
+        мы рассмотрим различные аспекты функций.</p>
+    <p>Функции определяются при помощи зарезервированного слова <code class="docutils literal"><span
+            class="pre">def</span></code>. После
+        этого слова указывается <em>имя</em> функции, за которым следует пара скобок, в
+        которых можно указать имена некоторых переменных, и заключительное двоеточие в
+        конце строки. Далее следует блок команд, составляющих функцию. На примере можно
+        видеть, что на самом деле это очень просто:</p>
+    <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span
+            class="pre">function1.py</span></code>)</p>
+    <div class="highlight-python">
+        <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sayHello</span><span
+                class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Привет, Мир!&#39;</span><span
+                    class="p">)</span> <span class="c1"># блок, принадлежащий функции</span>
+<span class="c1"># Конец функции</span>
+
+<span class="n">sayHello</span><span class="p">()</span> <span class="c1"># вызов функции</span>
+<span class="n">sayHello</span><span class="p">()</span> <span class="c1"># ещё один вызов функции</span>
+</pre>
+        </div>
+    </div>
+    <p><strong>Вывод:</strong></p>
+    <div class="highlight-default">
+        <div class="highlight"><pre><span></span>$ python function1.py
+Привет, Мир!
+Привет, Мир!
+</pre>
+        </div>
+    </div>
+    <p><strong>Как это работает:</strong></p>
+    <blockquote>
+        <div><p>Мы определили функцию с именем <code class="docutils literal"><span class="pre">sayHello</span></code>,
+            используя описанный выше
+            синтаксис. Эта функция не принимает параметров, поэтому в скобках не
+            объявлены какие-либо переменные. Параметры функции &#8211; это некие входные
+            данные, которые мы можем передать функции, чтобы получить соответствующий им
+            результат.</p>
+            <p>Обратите внимание, что мы можем вызывать одну и ту же функцию много раз, а
+                значит нет необходимости писать один и тот же код снова и снова.</p>
+        </div>
+    </blockquote>
+    <div class="section" id="id2">
+        <h2>Параметры функций<a class="headerlink" href="#id2" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Функции могут принимать параметры, т.е. некоторые значения, передаваемые
+            функции для того, чтобы она что-либо <em>сделала</em> с ними. Эти параметры похожи на
+            переменные, за исключением того, что значение этих переменных указывается при
+            вызове функции, и во время работы функции им уже присвоены их значения.</p>
+        <p>Параметры указываются в скобках при объявлении функции и разделяются запятыми.
+            Аналогично мы передаём значения, когда вызываем функцию. Обратите внимание на
+            терминологию: имена, указанные в объявлении функции, называются <em>параметрами</em>,
+            тогда как значения, которые вы передаёте в функцию при её вызове, &#8211;
+            <em>аргументами</em>.</p>
+        <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span class="pre">func_param.py</span></code>)
+        </p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printMax</span><span
+                    class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span
+                    class="p">):</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span
+                        class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span
+                        class="s1">&#39;максимально&#39;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span
+                        class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span
+                        class="s1">&#39;равно&#39;</span><span class="p">,</span> <span class="n">b</span><span
+                        class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span
+                        class="s1">&#39;максимально&#39;</span><span class="p">)</span>
+
+<span class="n">printMax</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span
+                        class="mi">4</span><span class="p">)</span> <span class="c1"># прямая передача значений</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">7</span>
+
+<span class="n">printMax</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span
+                        class="p">)</span> <span class="c1"># передача переменных в качестве аргументов</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python func_param.py
+4 максимально
+7 максимально
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>Здесь мы определили функцию с именем <code class="docutils literal"><span
+                    class="pre">printMax</span></code>, которая использует два
+                параметра с именами <code class="docutils literal"><span class="pre">a</span></code> и <code
+                        class="docutils literal"><span class="pre">b</span></code>. Мы находим наибольшее число с
+                применением
+                простого оператора <code class="docutils literal"><span class="pre">if..else</span></code> и выводим это
+                число.</p>
+                <p>При первом вызове функции <code class="docutils literal"><span class="pre">printMax</span></code> мы
+                    напрямую передаём числа в качестве
+                    аргументов. Во втором случае мы вызываем функцию с переменными в качестве
+                    аргументов. <code class="docutils literal"><span class="pre">printMax(x,</span> <span
+                            class="pre">y)</span></code> назначает значение аргумента <code
+                            class="docutils literal"><span class="pre">x</span></code> параметру
+                    <code class="docutils literal"><span class="pre">a</span></code>, а значение аргумента <code
+                            class="docutils literal"><span class="pre">y</span></code> &#8211; параметру <code
+                            class="docutils literal"><span class="pre">b</span></code>. В обоих случаях функция
+                    <code class="docutils literal"><span class="pre">printMax</span></code> работает одинаково.</p>
+            </div>
+        </blockquote>
+    </div>
+    <div class="section" id="id3">
+        <h2>Локальные переменные<a class="headerlink" href="#id3" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>При объявлении переменных внутри определения функции, они никоим образом не
+            связаны с другими переменными с таким же именем за пределами функции &#8211; т.е.
+            имена переменных являются <em>локальными</em> в функции. Это называется <em>областью
+                видимости</em> переменной. Область видимости всех переменных ограничена блоком, в
+            котором они объявлены, начиная с точки объявления имени.</p>
+        <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span class="pre">func_local.py</span></code>)
+        </p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;x равен&#39;</span><span
+                        class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Замена локального x на&#39;</span><span
+                        class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;x по-прежнему&#39;</span><span
+                        class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python func_local.py
+x равен 50
+Замена локального x на 2
+x по-прежнему 50
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>При первом выводе <em>значения</em>, присвоенного имени <code class="docutils literal"><span
+                    class="pre">x</span></code>, в первой строке
+                функции Python использует значение параметра, объявленного в основном
+                блоке, выше определения функции.</p>
+                <p>Далее мы назначаем <code class="docutils literal"><span class="pre">x</span></code> значение <code
+                        class="docutils literal"><span class="pre">2</span></code>. Имя <code
+                        class="docutils literal"><span class="pre">x</span></code> локально для нашей функции.
+                    Поэтому когда мы заменяем значение <code class="docutils literal"><span class="pre">x</span></code>
+                    в функции, <code class="docutils literal"><span class="pre">x</span></code>, объявленный в
+                    основном блоке, остаётся незатронутым.</p>
+                <p>Последним вызовом функции <code class="docutils literal"><span class="pre">print</span></code> мы
+                    выводим значение <code class="docutils literal"><span class="pre">x</span></code>, указанное в
+                    основном блоке, подтверждая таким образом, что оно не изменилось при
+                    локальном присваивании значения в ранее вызванной функции.</p>
+            </div>
+        </blockquote>
+    </div>
+    <div class="section" id="global">
+        <h2>Зарезервированное слово &#8220;global&#8221;<a class="headerlink" href="#global"
+                                                           title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Чтобы присвоить некоторое значение переменной, определённой на высшем уровне
+            программы (т.е. не в какой-либо области видимости, как то функции или классы),
+            необходимо указать Python, что её имя не локально, а <em>глобально</em> (<em>global</em>).
+            Сделаем это при помощи зарезервированного слова <code class="docutils literal"><span
+                    class="pre">global</span></code>. Без применения
+            зарезервированного слова <code class="docutils literal"><span class="pre">global</span></code> невозможно
+            присвоить значение переменной,
+            определённой за пределами функции.</p>
+        <p>Можно использовать уже существующие значения переменных, определённых за
+            пределами функции (при условии, что внутри функции не было объявлено переменной
+            с таким же именем). Однако, это не приветствуется, и его следует избегать,
+            поскольку человеку, читающему текст программы, будет непонятно, где находится
+            объявление переменной. Использование зарезервированного слова <code class="docutils literal"><span
+                    class="pre">global</span></code>
+            достаточно ясно показывает, что переменная объявлена в самом внешнем блоке.</p>
+        <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span
+                class="pre">func_global.py</span></code>)</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
+
+<span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
+    <span class="k">global</span> <span class="n">x</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;x равно&#39;</span><span
+                        class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">print</span><span class="p">(</span><span
+                        class="s1">&#39;Заменяем глобальное значение x на&#39;</span><span class="p">,</span> <span
+                        class="n">x</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;Значение x составляет&#39;</span><span
+                        class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python func_global.py
+x равно 50
+Заменяем глобальное значение x на 2
+Значение x составляет 2
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>Зарезервированное слово <code class="docutils literal"><span class="pre">global</span></code>
+                используется для того, чтобы объявить, что
+                <code class="docutils literal"><span class="pre">x</span></code> &#8211; это глобальная переменная, а
+                значит, когда мы присваиваем значение
+                имени <code class="docutils literal"><span class="pre">x</span></code> внутри функции, это изменение
+                отразится на значении переменной
+                <code class="docutils literal"><span class="pre">x</span></code> в основном блоке программы.</p>
+                <p>Используя одно зарезервированное слово <code class="docutils literal"><span class="pre">global</span></code>,
+                    можно объявить сразу
+                    несколько переменных: <code class="docutils literal"><span class="pre">global</span> <span
+                            class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z</span></code>.</p>
+            </div>
+        </blockquote>
+    </div>
+    <div class="section" id="nonlocal">
+        <h2>Зарезервированное слово &#8220;nonlocal&#8221;<a class="headerlink" href="#nonlocal"
+                                                             title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Мы увидели, как получать доступ к переменным в локальной и глобальной области
+            видимости. Есть ещё один тип области видимости, называемый &#8220;нелокальной&#8221;
+            (<code class="docutils literal"><span class="pre">nonlocal</span></code>) областью видимости, который
+            представляет собой нечто среднее
+            между первыми двумя. Нелокальные области видимости встречаются, когда вы
+            определяете функции внутри функций.</p>
+        <p>Поскольку в Python всё является выполнимым кодом, вы можете определять функции
+            где угодно.</p>
+        <p><strong>Давайте рассмотрим пример:</strong></p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="c1"># Filename: func_nonlocal.py</span>
+
+<span class="k">def</span> <span class="nf">func_outer</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;x равно&#39;</span><span
+                        class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">func_inner</span><span class="p">():</span>
+        <span class="n">nonlocal</span> <span class="n">x</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+
+    <span class="n">func_inner</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Локальное x сменилось на&#39;</span><span
+                        class="p">,</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">func_outer</span><span class="p">()</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python func_nonlocal.py
+x равно 2
+Локальное x сменилось на 5
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>Когда мы находимся внутри <code class="docutils literal"><span class="pre">func_inner</span></code>,
+                переменная <code class="docutils literal"><span class="pre">x</span></code>, определённая в
+                первой строке <code class="docutils literal"><span class="pre">func_outer</span></code> находится ни в
+                локальной области видимости
+                (определение переменной не входит в блок <code class="docutils literal"><span
+                        class="pre">func_inner</span></code>), ни в глобальной
+                области видимости (она также и не в основном блоке программы). Мы объявляем,
+                что хотим использовать именно эту переменную <code class="docutils literal"><span
+                        class="pre">x</span></code>, следующим образом:
+                <code class="docutils literal"><span class="pre">nonlocal</span> <span class="pre">x</span></code>.</p>
+                <p>Попробуйте заменить &#8220;<code class="docutils literal"><span class="pre">nonlocal</span> <span
+                        class="pre">x</span></code>&#8221; на &#8220;<code class="docutils literal"><span class="pre">global</span>
+                    <span class="pre">x</span></code>&#8221;, а затем удалить это
+                    зарезервированное слово, и пронаблюдайте за разницей между этими двумя
+                    случаями.</p>
+            </div>
+        </blockquote>
+    </div>
+    <div class="section" id="id4">
+        <h2>Значения аргументов по умолчанию<a class="headerlink" href="#id4" title="Ссылка на этот заголовок">¶</a>
+        </h2>
+        <p>Зачастую часть параметров функций могут быть <em>необязательными</em>, и для них будут
+            использоваться некоторые заданные значения по умолчанию, если пользователь не
+            укажет собственных. Этого можно достичь с помощью значений аргументов по
+            умолчанию. Их можно указать, добавив к имени параметра в определении функции
+            оператор присваивания (<code class="docutils literal"><span class="pre">=</span></code>) с последующим
+            значением.</p>
+        <p>Обратите внимание, что значение по умолчанию должно быть константой. Или точнее
+            говоря, оно должно быть неизменным<a class="footnote-reference" href="#id19" id="id5">[1]</a> &#8211; это
+            объясняется подробнее в
+            последующих главах. А пока запомните это.</p>
+        <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span
+                class="pre">func_default.py</span></code>)</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say</span><span
+                    class="p">(</span><span class="n">message</span><span class="p">,</span> <span
+                    class="n">times</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">message</span> <span class="o">*</span> <span
+                        class="n">times</span><span class="p">)</span>
+
+<span class="n">say</span><span class="p">(</span><span class="s1">&#39;Привет&#39;</span><span class="p">)</span>
+<span class="n">say</span><span class="p">(</span><span class="s1">&#39;Мир&#39;</span><span class="p">,</span> <span
+                        class="mi">5</span><span class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python func_default.py
+Привет
+МирМирМирМирМир
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>Функция под именем <code class="docutils literal"><span class="pre">say</span></code> используется
+                для вывода на экран строки указанное
+                число раз. Если мы не указываем значения, по умолчанию строка выводится один
+                раз. Мы достигаем этого указанием значения аргумента по умолчанию, равного
+                <code class="docutils literal"><span class="pre">1</span></code> для параметра <code
+                        class="docutils literal"><span class="pre">times</span></code><a class="footnote-reference"
+                                                                                         href="#id20" id="id6">[2]</a>.
+            </p>
+                <p>При первом вызове <code class="docutils literal"><span class="pre">say</span></code> мы указываем
+                    только строку, и функция выводит её
+                    один раз. При втором вызове <code class="docutils literal"><span class="pre">say</span></code> мы
+                    указываем также и аргумент <code class="docutils literal"><span class="pre">5</span></code>,
+                    обозначая таким образом, что мы хотим <em>сказать</em><a class="footnote-reference" href="#id21"
+                                                                             id="id7">[3]</a> фразу 5 раз.</p>
+            </div>
+        </blockquote>
+        <div class="admonition important">
+            <p class="first admonition-title">Важно</p>
+            <p class="last">Значениями по умолчанию могут быть снабжены только параметры, находящиеся в
+                конце списка параметров. Таким образом, в списке параметров функции параметр
+                со значением по умолчанию не может предшествовать параметру без значения по
+                умолчанию. Это связано с тем, что значения присваиваются параметрам в
+                соответствии с их положением. Например, <code class="docutils literal"><span class="pre">def</span>
+                    <span class="pre">func(a,</span> <span class="pre">b=5)</span></code> допустимо, а
+                <code class="docutils literal"><span class="pre">def</span> <span class="pre">func(a=5,</span> <span
+                        class="pre">b)</span></code> &#8211; <em>не допустимо</em>.</p>
+        </div>
+    </div>
+    <div class="section" id="id8">
+        <h2>Ключевые аргументы<a class="headerlink" href="#id8" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Если имеется некоторая функция с большим числом параметров, и при её вызове
+            требуется указать только некоторые из них, значения этих параметров могут
+            задаваться по их имени &#8211; это называется <em>ключевые параметры</em>. В этом случае
+            для передачи аргументов функции используется имя (ключ) вместо позиции (как
+            было до сих пор).</p>
+        <p>Есть два <em>преимущества</em> такого подхода: во-первых, использование функции
+            становится легче, поскольку нет необходимости отслеживать порядок аргументов;
+            во-вторых, можно задавать значения только некоторым избранным аргументам,
+            при условии, что остальные параметры имеют значения аргумента по умолчанию.</p>
+        <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span
+                class="pre">func_key.py</span></code>)</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span
+                    class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span
+                    class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">c</span><span
+                    class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;a равно&#39;</span><span
+                        class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;, b равно&#39;</span><span
+                        class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;, а c равно&#39;</span><span
+                        class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="n">func</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span
+                        class="mi">7</span><span class="p">)</span>
+<span class="n">func</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span> <span
+                        class="n">c</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
+<span class="n">func</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span
+                        class="mi">50</span><span class="p">,</span> <span class="n">a</span><span
+                        class="o">=</span><span class="mi">100</span><span class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python func_key.py
+a равно 3, b равно 7, а c равно 10
+a равно 25, b равно 5, а c равно 24
+a равно 100, b равно 5, а c равно 50
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>Функция с именем <code class="docutils literal"><span class="pre">func</span></code> имеет один
+                параметр без значения по умолчанию, за
+                которым следуют два параметра со значениями по умолчанию.</p>
+                <p>При первом вызове, <code class="docutils literal"><span class="pre">func(3,</span> <span class="pre">7)</span></code>,
+                    параметр <code class="docutils literal"><span class="pre">a</span></code> получает значение <code
+                            class="docutils literal"><span class="pre">3</span></code>,
+                    параметр <code class="docutils literal"><span class="pre">b</span></code> получает значение <code
+                            class="docutils literal"><span class="pre">7</span></code>, а <code
+                            class="docutils literal"><span class="pre">c</span></code> получает своё значение по
+                    умолчанию, равное <code class="docutils literal"><span class="pre">10</span></code>.</p>
+                <p>При втором вызове <code class="docutils literal"><span class="pre">func(25,</span> <span class="pre">c=24)</span></code>
+                    переменная <code class="docutils literal"><span class="pre">a</span></code> получает значение 25 в
+                    силу позиции аргумента. После этого параметр <code class="docutils literal"><span
+                            class="pre">c</span></code> получает значение <code class="docutils literal"><span
+                            class="pre">24</span></code>
+                    по имени, т.е. как ключевой параметр. Переменная <code class="docutils literal"><span
+                            class="pre">b</span></code> получает значение по
+                    умолчанию, равное <code class="docutils literal"><span class="pre">5</span></code>.</p>
+                <p>При третьем обращении <code class="docutils literal"><span class="pre">func(c=50,</span> <span
+                        class="pre">a=100)</span></code> мы используем ключевые аргументы
+                    для всех указанных значений. Обратите внимание на то, что мы указываем
+                    значение для параметра <code class="docutils literal"><span class="pre">c</span></code> перед
+                    значением для <code class="docutils literal"><span class="pre">a</span></code>, даже несмотря на то,
+                    что в определении функции параметр <code class="docutils literal"><span class="pre">a</span></code>
+                    указан раньше <code class="docutils literal"><span class="pre">c</span></code>.</p>
+            </div>
+        </blockquote>
+    </div>
+    <div class="section" id="id10">
+        <h2>Переменное число параметров <a class="footnote-reference" href="#id22" id="id9">[4]</a><a class="headerlink"
+                                                                                                      href="#id10"
+                                                                                                      title="Ссылка на этот заголовок">¶</a>
+        </h2>
+        <p>Иногда бывает нужно определить функцию, способную принимать <em>любое</em> число
+            параметров. Этого можно достичь при помощи звёздочек (сохраните как
+            <code class="docutils literal"><span class="pre">function_varargs.py</span></code>):</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">total</span><span
+                    class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">5</span><span
+                    class="p">,</span> <span class="o">*</span><span class="n">numbers</span><span
+                    class="p">,</span> <span class="o">**</span><span class="n">phonebook</span><span
+                    class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span
+                        class="p">,</span> <span class="n">a</span><span class="p">)</span>
+
+    <span class="c1">#проход по всем элементам кортежа</span>
+    <span class="k">for</span> <span class="n">single_item</span> <span class="ow">in</span> <span
+                        class="n">numbers</span><span class="p">:</span>
+      <span class="k">print</span><span class="p">(</span><span class="s1">&#39;single_item&#39;</span><span
+                        class="p">,</span> <span class="n">single_item</span><span class="p">)</span>
+
+    <span class="c1">#проход по всем элементам словаря</span>
+    <span class="k">for</span> <span class="n">first_part</span><span class="p">,</span> <span
+                        class="n">second_part</span> <span class="ow">in</span> <span class="n">phonebook</span><span
+                        class="o">.</span><span class="n">items</span><span class="p">():</span>
+      <span class="k">print</span><span class="p">(</span><span class="n">first_part</span><span class="p">,</span><span
+                        class="n">second_part</span><span class="p">)</span>
+
+<span class="n">total</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span
+                        class="mi">1</span><span class="p">,</span><span class="mi">2</span><span
+                        class="p">,</span><span class="mi">3</span><span class="p">,</span><span
+                        class="n">Jack</span><span class="o">=</span><span class="mi">1123</span><span
+                        class="p">,</span><span class="n">John</span><span class="o">=</span><span
+                        class="mi">2231</span><span class="p">,</span><span class="n">Inge</span><span
+                        class="o">=</span><span class="mi">1560</span><span class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python function_varargs.py
+a 10
+single_item 1
+single_item 2
+single_item 3
+Inge 1560
+John 2231
+Jack 1123
+None
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>Когда мы объявляем параметр со звёздочкой (например, <code class="docutils literal"><span
+                    class="pre">*param</span></code>), все
+                позиционные аргументы начиная с этой позиции и до конца будут собраны в
+                кортеж под именем <code class="docutils literal"><span class="pre">param</span></code>.</p>
+                <p>Аналогично, когда мы объявляем параметры с двумя звёздочками (<code class="docutils literal"><span
+                        class="pre">**param</span></code>),
+                    все ключевые аргументы начиная с этой позиции и до конца будут собраны в
+                    словарь под именем <code class="docutils literal"><span class="pre">param</span></code>.</p>
+                <p>Мы изучим кортежи и словари в <a class="reference internal"
+                                                    href="data_structures.html#data-structures"><span
+                        class="std std-ref">одной из последующих глав</span></a>.</p>
+            </div>
+        </blockquote>
+    </div>
+    <div class="section" id="id11">
+        <h2>Только ключевые параметры<a class="headerlink" href="#id11" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Если некоторые ключевые параметры должны быть доступны только по ключу, а <em>не</em>
+            как позиционные аргументы, их можно объявить после параметра со звёздочкой
+            (сохраните как <code class="docutils literal"><span class="pre">keyword_only.py</span></code>):</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">total</span><span
+                    class="p">(</span><span class="n">initial</span><span class="o">=</span><span
+                    class="mi">5</span><span class="p">,</span> <span class="o">*</span><span
+                    class="n">numbers</span><span class="p">,</span> <span class="n">extra_number</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">initial</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span
+                        class="n">numbers</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="n">number</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="n">extra_number</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+
+<span class="n">total</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span
+                        class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span
+                        class="mi">3</span><span class="p">,</span> <span class="n">extra_number</span><span
+                        class="o">=</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">total</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span
+                        class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span
+                        class="mi">3</span><span class="p">)</span>
+<span class="c1"># Вызовет ошибку, поскольку мы не указали значение</span>
+<span class="c1"># аргумента по умолчанию для &#39;extra_number&#39;.</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python keyword_only.py
+66
+Traceback (most recent call last):
+  File &quot;keyword_only.py&quot;, line 12, in &lt;module&gt;
+total(10, 1, 2, 3)
+TypeError: total() needs keyword-only argument extra_number
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>Объявление параметров после параметра со звёздочкой даёт только ключевые
+                аргументы. Если для таких аргументов не указано значение по умолчанию, и
+                оно не передано при вызове, обращение к функции вызовет ошибку, в чём мы
+                только что убедились.</p>
+                <p>Обратите внимание на использование <code class="docutils literal"><span class="pre">+=</span></code>,
+                    который представляет собой
+                    сокращённый оператор, позволяющий вместо <code class="docutils literal"><span class="pre">x</span>
+                        <span class="pre">=</span> <span class="pre">x</span> <span class="pre">+</span> <span
+                                class="pre">y</span></code> просто написать
+                    <code class="docutils literal"><span class="pre">x</span> <span class="pre">+=</span> <span
+                            class="pre">y</span></code>.</p>
+                <p>Если вам нужны аргументы, передаваемые только по ключу, но не нужен параметр
+                    со звёздочкой, то можно просто указать одну звёздочку без указания имени:
+                    <code class="docutils literal"><span class="pre">def</span> <span
+                            class="pre">total(initial=5,</span> <span class="pre">*,</span> <span class="pre">extra_number)</span></code>.
+                </p>
+            </div>
+        </blockquote>
+    </div>
+    <div class="section" id="return">
+        <h2>Оператор &#8220;return&#8221;<a class="headerlink" href="#return" title="Ссылка на этот заголовок">¶</a>
+        </h2>
+        <p>Оператор <code class="docutils literal"><span class="pre">return</span></code> используется для возврата<a
+                class="footnote-reference" href="#id23" id="id12">[5]</a> из функции, т.е. для
+            прекращения её работы и выхода из неё. При этом можно также <em>вернуть некоторое
+                значение</em> из функции.</p>
+        <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span
+                class="pre">func_return.py</span></code>)</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+<span class="c1"># Filename: func_return.py</span>
+
+<span class="k">def</span> <span class="nf">maximum</span><span class="p">(</span><span class="n">x</span><span
+                        class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span
+                        class="p">:</span>
+        <span class="k">return</span> <span class="n">x</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span
+                        class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Числа равны.&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">y</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">maximum</span><span class="p">(</span><span
+                        class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python func_return.py
+3
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div>Функция <code class="docutils literal"><span class="pre">maximum</span></code> возвращает максимальный
+                из двух параметров, которые в
+                данном случае передаются ей при вызове. Она использует обычный условный
+                оператор <code class="docutils literal"><span class="pre">if..else</span></code> для определения
+                наибольшего числа, а затем
+                <em>возвращает</em> это число.
+            </div>
+        </blockquote>
+        <p>Обратите внимание, что оператор <code class="docutils literal"><span class="pre">return</span></code> без
+            указания возвращаемого
+            значения эквивалентен выражению <code class="docutils literal"><span class="pre">return</span> <span
+                    class="pre">None</span></code>. <code class="docutils literal"><span class="pre">None</span></code>
+            &#8211; это специальный
+            тип данных в Python, обозначающий ничего. К примеру, если значение переменной
+            установлено в <code class="docutils literal"><span class="pre">None</span></code>, это означает, что ей не
+            присвоено никакого значения.</p>
+        <p>Каждая функция содержит в неявной форме оператор <code class="docutils literal"><span
+                class="pre">return</span> <span class="pre">None</span></code> в конце,
+            если вы не указали своего собственного оператора <code class="docutils literal"><span
+                    class="pre">return</span></code>. В этом можно
+            убедиться, запустив <code class="docutils literal"><span class="pre">print(someFunction())</span></code>,
+            где функция <code class="docutils literal"><span class="pre">someFunction</span></code>
+            &#8211; это какая-нибудь функция, не имеющая оператора <code class="docutils literal"><span class="pre">return</span></code>
+            в явном виде.
+            Например:</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span
+                    class="nf">someFunction</span><span class="p">():</span>
+    <span class="k">pass</span>
+</pre>
+            </div>
+        </div>
+        <p>Оператор <code class="docutils literal"><span class="pre">pass</span></code> используется в Python для
+            обозначения пустого блока команд.</p>
+        <div class="admonition note">
+            <p class="first admonition-title">Примечание</p>
+            <p class="last">Существует встроенная функция <code class="docutils literal"><span
+                    class="pre">max</span></code>, в которой уже реализован функционал
+                &#8220;поиск максимума&#8221;, так что пользуйтесь этой встроенной функцией, где это
+                возможно.</p>
+        </div>
+    </div>
+    <div class="section" id="id14">
+        <h2>Строки документации <a class="footnote-reference" href="#id24" id="id13">[6]</a><a class="headerlink"
+                                                                                               href="#id14"
+                                                                                               title="Ссылка на этот заголовок">¶</a>
+        </h2>
+        <p>Python имеет остроумную особенность, называемую <em>строками документации</em>, обычно
+            обозначаемую сокращённо <em>docstrings</em>. Это очень важный инструмент, которым вы
+            обязательно должны пользоваться, поскольку он помогает лучше документировать
+            программу и облегчает её понимание. Поразительно, но строку документации можно
+            получить, например, из функции, даже во время выполнения программы!</p>
+        <p><strong>Пример:</strong> (сохраните как <code class="docutils literal"><span
+                class="pre">func_doc.py</span></code>)</p>
+        <div class="highlight-python">
+            <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">printMax</span><span
+                    class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span
+                    class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Выводит максимальное из двух чисел.</span>
+
+<span class="sd">    Оба значения должны быть целыми числами.&#39;&#39;&#39;</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span
+                        class="n">x</span><span class="p">)</span> <span class="c1"># конвертируем в целые, если возможно</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span
+                        class="n">y</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span><span
+                        class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span
+                        class="s1">&#39;наибольшее&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span
+                        class="s1">&#39;наибольшее&#39;</span><span class="p">)</span>
+
+<span class="n">printMax</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span
+                        class="mi">5</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">printMax</span><span class="o">.</span><span
+                        class="vm">__doc__</span><span class="p">)</span>
+</pre>
+            </div>
+        </div>
+        <p><strong>Вывод:</strong></p>
+        <div class="highlight-default">
+            <div class="highlight"><pre><span></span>$ python func_doc.py
+5 наибольшее
+Выводит максимальное из двух чисел.
+
+    Оба значения должны быть целыми числами.
+</pre>
+            </div>
+        </div>
+        <p><strong>Как это работает:</strong></p>
+        <blockquote>
+            <div><p>Строка в первой логической строке функции является <em>строкой документации</em> для
+                этой функции. Обратите внимание на то, что строки документации применимы также
+                к <a class="reference internal" href="modules.html"><span class="doc">модулям</span></a> и <a
+                        class="reference internal" href="object_oriented_programming.html"><span
+                        class="doc">классам</span></a>, о
+                которых мы узнаем в соответствующих главах.</p>
+                <p>Строки документации принято записывать в форме многострочной<a class="footnote-reference"
+                                                                                  href="#id25" id="id15">[7]</a> строки,
+                    где
+                    первая строка начинается с заглавной буквы и заканчивается точкой. Вторая
+                    строка оставляется пустой, а подробное описание начинается с третьей. Вам
+                    <em>настоятельно рекомендуется</em> следовать такому формату для всех строк
+                    документации всех ваших нетривиальных функций.</p>
+                <p>Доступ к строке документации функции <code class="docutils literal"><span class="pre">printMax</span></code>
+                    можно получить с помощью
+                    атрибута этой функции (т.е. имени, принадлежащего ей) <code class="docutils literal"><span
+                            class="pre">__doc__</span></code> (обратите
+                    внимание на <em>двойное подчёркивание</em>). Просто помните, что Python представляет
+                    <em>всё</em> в виде объектов, включая функции. Мы узнаем больше об объектах в главе
+                    <a class="reference internal" href="object_oriented_programming.html"><span
+                            class="doc">о классах</span></a>.</p>
+            </div>
+        </blockquote>
+        <p>Если вы пользовались функцией <code class="docutils literal"><span class="pre">help()</span></code> в Python,
+            значит вы уже видели
+            строки документации. Эта функция просто-напросто считывает атрибут <code class="docutils literal"><span
+                    class="pre">__doc__</span></code>
+            соответствующей функции и аккуратно выводит его на экран. Вы можете проверить
+            её на рассмотренной выше функции: просто включите <code class="docutils literal"><span class="pre">help(printMax)</span></code>
+            в текст
+            программы. Не забудьте нажать клавишу <code class="docutils literal"><span class="pre">q</span></code> для
+            выхода из справки (<code class="docutils literal"><span class="pre">help</span></code>).</p>
+        <p>Точно так же автоматические инструменты могут получать документацию из
+            программы. Именно поэтому я <em>настоятельно рекомендую</em> вам использовать строки
+            документации для любой нетривиальной функции, которую вы пишете. Команда
+            <code class="docutils literal"><span class="pre">pydoc</span></code>, поставляемая вместе с пакетом Python,
+            работает аналогично функции
+            <code class="docutils literal"><span class="pre">help()</span></code>.</p>
+    </div>
+    <div class="section" id="id16">
+        <h2>Аннотации<a class="headerlink" href="#id16" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Функции имеют ещё одну дополнительную возможность, называемую аннотациями,
+            которые предоставляют отличный способ сопровождения каждого параметра, равно
+            как и возвращаемого значения дополнительной информацией. Поскольку сам язык
+            Python не интерпретирует эти аннотации каким-либо способом (этот функционал
+            отводится посторонним библиотекам), мы опустим эту возможность из нашего
+            обсуждения. Если вам интересно почитать об аннотациях, просмотрите <span class="target" id="index-0"></span><a
+                    class="pep reference external" href="https://www.python.org/dev/peps/pep-3107"><strong>PEP
+                3107</strong></a>.</p>
+    </div>
+    <div class="section" id="id17">
+        <h2>Резюме<a class="headerlink" href="#id17" title="Ссылка на этот заголовок">¶</a></h2>
+        <p>Мы рассмотрели достаточно много аспектов функций, но тем не менее, вы должны
+            понимать, что это далеко не все их аспекты. В то же время, мы охватили
+            большинство того, с чем вы будете сталкиваться при повседневном использовании
+            функций в Python.</p>
+        <p>Далее мы увидим, как использовать и создавать модули Python.</p>
+    </div>
+    <div class="section" id="id18">
+        <h2>Примечания<a class="headerlink" href="#id18" title="Ссылка на этот заголовок">¶</a></h2>
+        <table class="docutils footnote" frame="void" id="id19" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id5">[1]</a></td>
+                <td>&#8220;immutable&#8221; в терминологии Python (<em>прим. перев.</em>)</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id20" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id6">[2]</a></td>
+                <td>times &#8211; <em>англ.</em> &#8220;раз&#8221; (<em>прим. перев.</em>)</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id21" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id7">[3]</a></td>
+                <td>say &#8211; <em>англ.</em> &#8220;сказать&#8221; (<em>прим. перев.</em>)</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id22" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id9">[4]</a></td>
+                <td>VarArgs &#8211; <em>от англ.</em> &#8220;<strong>Var</strong>iable number of <strong>Arg</strong>ument<strong>s</strong>&#8221;
+                    &#8211; &#8220;переменное число аргументов&#8221; (<em>прим. перев.</em>)
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id23" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id12">[5]</a></td>
+                <td>return &#8211; <em>англ.</em> &#8220;возврат&#8221; (<em>прим. перев.</em>)</td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id24" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id13">[6]</a></td>
+                <td>DocString - <em>от англ.</em> &#8220;<strong>Doc</strong>umentation <strong>String</strong>&#8221;
+                    &#8211; &#8220;строка
+                    документации&#8221; (<em>прим. перев.</em>)
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="docutils footnote" frame="void" id="id25" rules="none">
+            <colgroup>
+                <col class="label"/>
+                <col/>
+            </colgroup>
+            <tbody valign="top">
+            <tr>
+                <td class="label"><a class="fn-backref" href="#id15">[7]</a></td>
+                <td>т.е. строки, содержащей символы перевода строки. (<em>прим. перев</em>)</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

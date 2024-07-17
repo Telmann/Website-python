@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Практика</title>
+    <link rel="shortcut icon" type="image/ico" href="python-logo.png"/>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css"/>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css"/>
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    .left-col {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 500px;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100px;
+      width: 800px;
+       margin-left: 400px;
+      background: #d8d8d8;
+      height: 1000px;
+    }
+
+    .menu-item {
+      top: 100px;
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      cursor: pointer;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+
+    .content.open {
+      max-height: 700px;
+    }
+
+
+    </style>
+</head>
+<body style="background: #ccc;">
+
+
+<div style="float: left;position: absolute;top: 0px; width: 250px;height: 1530px; padding: 25px;background: #C8A98F;color: #8B4513;margin: 0px;">
+    <p><A href="Главная страница.html" style="color: #8B4513;font-size: 20px;text-decoration: none;" target="_blank">Главная
+        страница</A></p>
+
+    <p><A href="Книга.html" style="color: #8B4513;text-decoration: none;" target="_blank">Теория</A></p>
+
+    <p><A href="Обучающие видео.html" style="color: #8B4513;text-decoration: none;" target="_blank">Обучающие видео</A>
+    </p>
+
+    <p><A href="Exercieses.html" style="color: #8B4513;text-decoration: none;" target="_blank">Практика</A></p>
+</div>
+
+<div style="width: 1000px; height: 100px; position: relative; top: 0px; text-align: center; display: inline; margin-left: 320px; background: #4ddcef45;">
+    <p>Раздел "Практика" предназначен только той категории обучающихся, кто ознакомился с разделами: "Теория",
+        "Обучающие видео".</p>
+</div>
+
+<div class="menu">
+    <div class="menu-item" id="item1">Задача №1. Произведение</div>
+    <div class="content" id="content1">
+        <p>Напишите функцию, которая принимает два значения и возвращает их произведение (a*b)</p>
+        <iframe src="https://trinket.io/embed/python/f5bb24bf93" width="100%" height="356" frameborder="0"
+                marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+    <div class="menu-item" id="item2">Задача №1. Решение от автора</div>
+    <div class="content" id="content2">
+        <iframe src="https://trinket.io/embed/python/774dfea242" width="100%" height="356" frameborder="0"
+                marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+    <div class="menu-item" id="item3">Задача №2. Наименьшее значение в списке</div>
+    <div class="content" id="content3">
+        <p>В этой задаче вам необходимо написать функцию, которая находит наименьшее значение в списке. </p>
+        <p>Для списка [34, 15, 88, 2] ваша функция должна вернуть 2, а для списка [34, -345, -1, 100]: -345</p>
+        <p>Можете предположить, что ваша функция работает только с непустыми списками.</p>
+        <iframe src="https://trinket.io/embed/python/f5bb24bf93" width="100%" height="356" frameborder="0"
+                marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+    <div class="menu-item" id="item4">Задача №2. Решение от автора</div>
+    <div class="content" id="content4">
+        <iframe src="https://trinket.io/embed/python/6d112dc3d0" width="100%" height="356" frameborder="0"
+                marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+    <div class="menu-item" id="item5">Задача №3. Четное/Нечетное</div>
+    <div class="content" id="content5">
+        <p>Создайте функцию, которая принимает целое число в качестве аргумента и возвращает «Четное» для четных чисел
+            или «Нечетное» для нечетных чисел.</p>
+        <iframe src="https://trinket.io/embed/python/f5bb24bf93" width="100%" height="356" frameborder="0"
+                marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+    <div class="menu-item" id="item6">Задача №3. Решение от автора</div>
+    <div class="content" id="content6">
+        <iframe src="https://trinket.io/embed/python/6b77a684b8" width="100%" height="356" frameborder="0"
+                marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+    <div class="menu-item" id="item7">Задача №4. Супер-легко</div>
+    <div class="content" id="content7">
+        <p>Создайте функцию, которая возвращает значение, умноженное на 50 и увеличенное на 6. Если введенное значение
+            является строкой, оно должно возвращать «Error».</p>
+        <iframe src="https://trinket.io/embed/python/f5bb24bf93" width="100%" height="356" frameborder="0"
+                marginwidth="0" marginheight="0" allowfullscreen></iframe>
+        <p>Ответ: </p>
+    </div>
+    <div class="menu-item" id="item8">Задача №4. Решение от автора</div>
+    <div class="content" id="content8">
+        <iframe src="https://trinket.io/embed/python/6b77a684b8" width="100%" height="356" frameborder="0"
+                marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+    <div class="menu-item" id="item9">Задача №5.</div>
+    <div class="content" id="content9">
+        <p>Эту задачу вам предстоит решить самостоятельно.</p>
+        <p>Напишите функцию, которая принимает целое число в качестве входных данных и возвращает количество битов,
+            равных единице в двоичном представлении этого числа</p>
+        <p>Представьте, что ввод функции всегда неотрицательный</p>
+        <p>Пример: двоичное представление числа 1234 равно 10011010010, поэтому в этом случае функция должна вернуть
+            5</p>
+        <iframe src="https://trinket.io/embed/python/f5bb24bf93" width="100%" height="356" frameborder="0"
+                marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+<script>
+    const items = document.querySelectorAll('.menu-item');
+    const contents = document.querySelectorAll('.content');
+
+    for (let i = 0; i < items.length; i++) {
+      items[i].addEventListener('click', () => {
+        contents[i].classList.toggle('open');
+
+        for (let j = 0; j < contents.length; j++) {
+          if (j != i && contents[j].classList.contains('open')) {
+            contents[j].classList.remove('open');
+          }
+        }
+      });
+    }
+
+</script>
+
+</body>
+</html>
